@@ -1,0 +1,80 @@
+import datetime
+import json
+import os
+import threading
+import time
+
+def calculate_session_length(start, end):
+    session_length = end - start
+    return session_length
+
+def track_study_session():
+    start_time = datetime.datetime.now()
+    day_number = datetime.date.today() - datetime.date(2024, 5, 13) 
+    start_time_str = start_time.strftime('%I:%M:%S %p')
+
+    def display_session_progress():
+        while True:
+            # Clear the screen
+            os.system('clear')
+
+            # Calculate the current session duration
+            current_time = datetime.datetime.now()
+            session_duration = current_time - start_time
+            hours, remainder = divmod(session_duration.total_seconds(), 3600)
+            minutes, seconds = divmod(remainder, 60)
+            session_duration_str = f"{int(hours):02}:{int(minutes):02}:{int(seconds):02}"
+
+            print(f"""
+ ╱|、
+(˚ˎ 。7     Session in progress... 
+ |、˜〵     Elapsed time: {session_duration_str}
+ じしˍ,)ノ
+                    """)
+            time.sleep(1)  
+
+    progress_thread = threading.Thread(target=display_session_progress)
+    progress_thread.daemon = True  
+    progress_thread.start()
+
+    input()
+
+    print(f"Doing Physics Everyday Until I Graduate University | Day {day_number.days}")
+    print(f"Session started at: {start_time_str}")
+    end_time = datetime.datetime.now()
+    end_time_str = end_time.strftime('%I:%M:%S %p')
+    print(f"Session ended at: {end_time_str}")
+
+    session_length = calculate_session_length(start_time, end_time)
+
+    hours, remainder = divmod(session_length.total_seconds(), 3600)
+    minutes, seconds = divmod(remainder, 60)
+    session_length_str = f"{int(hours):02}:{int(minutes):02}:{int(seconds):02}"
+    print(f"Session length: {session_length_str}")
+
+    session_data = {
+        "day": day_number.days,
+        "start_time": start_time_str,
+        "end_time": end_time_str,
+        "session_length": session_length_str,
+        "date": start_time.strftime('%Y-%m-%d')
+    }
+
+    file_name = 'study_sessions.json'
+
+    if os.path.exists(file_name):
+        with open(file_name, 'r') as file:
+            data = json.load(file)
+    else:
+        data = []
+
+    data.append(session_data)
+
+    with open(file_name, 'w') as file:
+        json.dump(data, file, indent=4)
+
+    print("Session data saved successfully.")
+
+if __name__ == "__main__":
+    track_study_session()
+

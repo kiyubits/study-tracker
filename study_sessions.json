@@ -1,0 +1,86 @@
+[
+    {
+        "day": 1,
+        "start_time": "10:00:00 PM",
+        "end_time": "11:00:00 PM",
+        "session_length": "01:00:00",
+        "date": "2024-05-14"
+    },
+    {
+        "day": 2,
+        "start_time": "10:00:00 PM",
+        "end_time": "11:00:00 PM",
+        "session_length": "01:00:00",
+        "date": "2024-05-15"
+    },
+    {
+        "day": 3,
+        "start_time": "10:00:00 PM",
+        "end_time": "11:00:00 PM",
+        "session_length": "01:00:00",
+        "date": "2024-05-16"
+    },
+    {
+        "day": 4,
+        "start_time": "10:00:00 PM",
+        "end_time": "11:00:00 PM",
+        "session_length": "01:00:00",
+        "date": "2024-05-17"
+    },
+    {
+        "day": 5,
+        "start_time": "10:00:00 PM",
+        "end_time": "11:00:00 PM",
+        "session_length": "01:00:00",
+        "date": "2024-05-18"
+    },
+    {
+        "day": 6,
+        "start_time": "10:00:00 PM",
+        "end_time": "11:00:00 PM",
+        "session_length": "01:00:00",
+        "date": "2024-05-19"
+    },
+    {
+        "day": 7,
+        "start_time": "10:00:00 PM",
+        "end_time": "11:00:00 PM",
+        "session_length": "01:00:00",
+        "date": "2024-05-20"
+    },
+    {
+        "day": 8,
+        "start_time": "10:00:00 PM",
+        "end_time": "11:00:00 PM",
+        "session_length": "01:00:00",
+        "date": "2024-05-21"
+    },
+    {
+        "day": 9,
+        "start_time": "10:00:00 PM",
+        "end_time": "11:00:00 PM",
+        "session_length": "01:00:00",
+        "date": "2024-05-22"
+    },
+    {
+        "day": 10,
+        "start_time": "10:00:00 PM",
+        "end_time": "11:00:00 PM",
+        "session_length": "01:00:00",
+        "date": "2024-05-23"
+    },
+    {
+        "day": 11,
+        "start_time": "10:56:25 PM",
+        "end_time": "11:23:56 PM",
+        "session_length": "01:27:30",
+        "date": "2024-05-24"
+    },
+    {
+        "day": 12,
+        "start_time": "11:07:24 PM",
+        "end_time": "12:06:04 AM",
+        "session_length": "00:58:39",
+        "date": "2024-05-25"
+    }
+]
