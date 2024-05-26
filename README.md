@@ -1,6 +1,6 @@
 a simple study tracker in python that makes the terminal show a screen to indicate a session is in progress.
 
-# Running
+# How To Run
 
 you just need to run it like any python file, and i don't think extra packages are needed
 
