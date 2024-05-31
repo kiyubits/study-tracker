@@ -1,5 +1,10 @@
 a simple study tracker in python that makes the terminal show a screen to indicate a session is in progress.
 
+# Future Improvements
+
+- make the data analysis method include more stuff
+  - allow for graphs? it would be kinda cool to with with math/statistics packages
+
 # Personal Goals
 
 i'm personally using this to keep track of my study sessions and i wanted to keep the data somewhere for accountability, so might as well keep it here lol. my daily habit is studying physics everyday, just going through a textbook and learning its cool concepts, including exercises because those are super helpful at reinforcing understanding
