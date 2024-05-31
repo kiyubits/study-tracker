@@ -4,6 +4,7 @@ a simple study tracker in python that makes the terminal show a screen to indica
 
 - make the data analysis method include more stuff
   - allow for graphs? it would be kinda cool to with with math/statistics packages
+- polybar module?
 
 # Personal Goals
 
