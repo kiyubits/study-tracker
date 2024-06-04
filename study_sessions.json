@@ -145,5 +145,12 @@
         "end_time": "11:37:35 PM",
         "session_length": "01:30:07",
         "date": "2024-06-03"
+    },
+    {
+        "day": 22,
+        "start_time": "11:44:53 PM",
+        "end_time": "12:15:34 AM",
+        "session_length": "00:30:41",
+        "date": "2024-06-04"
     }
 ]
