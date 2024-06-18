@@ -11,7 +11,8 @@ def calculate_session_length(start, end):
 
 def track_study_session():
     start_time = datetime.datetime.now()
-    day_number = datetime.date.today() - datetime.date(2024, 5, 13) 
+    # kinda broken rn, the day counter is 1 off. temp fixing by changing initial date
+    day_number = datetime.date.today() - datetime.date(2024, 5, 12) 
     start_time_str = start_time.strftime('%I:%M:%S %p')
 
     def display_session_progress():
@@ -65,14 +66,6 @@ def track_study_session():
     session_length_str = f"{int(hours):02}:{int(minutes):02}:{int(seconds):02}"
     print(f"Session length: {session_length_str}\n")
 
-    session_data = {
-        "day": day_number.days,
-        "start_time": start_time_str,
-        "end_time": end_time_str,
-        "session_length": session_length_str,
-        "date": start_time.strftime('%Y-%m-%d')
-    }
-
     file_name = 'study_sessions.json'
 
     if os.path.exists(file_name):
@@ -80,6 +73,14 @@ def track_study_session():
             data = json.load(file)
     else:
         data = []
+
+    session_data = {
+        "day": day_number.days,
+        "start_time": start_time_str,
+        "end_time": end_time_str,
+        "session_length": session_length_str,
+        "date": start_time.strftime('%Y-%m-%d')
+    }
 
     data.append(session_data)
 
