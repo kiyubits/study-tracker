@@ -10,9 +10,16 @@ def calculate_session_length(start, end):
     return session_length
 
 def track_study_session():
+    file_name = 'study_sessions.json'
+
+    if os.path.exists(file_name):
+        with open(file_name, 'r') as file:
+            data = json.load(file)
+    else:
+        data = []
+
     start_time = datetime.datetime.now()
-    # kinda broken rn, the day counter is 1 off. temp fixing by changing initial date
-    day_number = datetime.date.today() - datetime.date(2024, 5, 12) 
+    day_number = len(data) + 1
     start_time_str = start_time.strftime('%I:%M:%S %p')
 
     def display_session_progress():
@@ -53,7 +60,7 @@ def track_study_session():
         "The first principle is that you must not fool yourself and you are the easiest person to fool."
     ]
 
-    print(f"Doing Physics Everyday Until I Graduate University | Day {day_number.days}")
+    print(f"Doing Physics Everyday Until I Graduate University | Day {day_number}")
     print(f"Session started at: {start_time_str}")
     end_time = datetime.datetime.now()
     end_time_str = end_time.strftime('%I:%M:%S %p')
@@ -66,16 +73,8 @@ def track_study_session():
     session_length_str = f"{int(hours):02}:{int(minutes):02}:{int(seconds):02}"
     print(f"Session length: {session_length_str}\n")
 
-    file_name = 'study_sessions.json'
-
-    if os.path.exists(file_name):
-        with open(file_name, 'r') as file:
-            data = json.load(file)
-    else:
-        data = []
-
     session_data = {
-        "day": day_number.days,
+        "day": day_number,
         "start_time": start_time_str,
         "end_time": end_time_str,
         "session_length": session_length_str,
