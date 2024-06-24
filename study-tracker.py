@@ -60,7 +60,7 @@ def track_study_session():
         "The first principle is that you must not fool yourself and you are the easiest person to fool."
     ]
 
-    print(f"Doing Physics Everyday Until I Graduate University | Day {day_number}")
+    print(f"Studying Physics Everyday Until I Graduate University | Day {day_number}")
     print(f"Session started at: {start_time_str}")
     end_time = datetime.datetime.now()
     end_time_str = end_time.strftime('%I:%M:%S %p')
