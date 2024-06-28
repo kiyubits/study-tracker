@@ -306,5 +306,26 @@
         "end_time": "11:35:31 PM",
         "session_length": "01:19:26",
         "date": "2024-06-25"
+    },
+    {
+        "day": 45,
+        "start_time": "12:15:21 AM",
+        "end_time": "12:28:20 AM",
+        "session_length": "00:12:59",
+        "date": "2024-06-27"
+    },
+    {
+        "day": 46,
+        "start_time": "10:44:34 PM",
+        "end_time": "11:10:49 PM",
+        "session_length": "00:26:14",
+        "date": "2024-06-27"
+    },
+    {
+        "day": 47,
+        "start_time": "12:43:15 AM",
+        "end_time": "01:09:15 AM",
+        "session_length": "00:26:00",
+        "date": "2024-06-29"
     }
 ]
