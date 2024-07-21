@@ -474,5 +474,19 @@
         "end_time": "07:08:45 PM",
         "session_length": "00:35:29",
         "date": "2024-07-19"
+    },
+    {
+        "day": 69,
+        "start_time": "10:39:47 PM",
+        "end_time": "11:38:19 PM",
+        "session_length": "00:58:31",
+        "date": "2024-07-20"
+    },
+    {
+        "day": 70,
+        "start_time": "11:51:30 PM",
+        "end_time": "12:09:02 AM",
+        "session_length": "00:17:32",
+        "date": "2024-07-21"
     }
 ]
