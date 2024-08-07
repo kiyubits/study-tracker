@@ -54,8 +54,8 @@ class StudySession:
             )
             if continue_response.lower() == "y":
                 self.start_time_str = self.data[len(self.data) - 1]["start_time"]
-                self.start_time = datetime.datetime(self.start_time.year, self.start_time.month, self.start_time.day, int(self.start_time_str[:2]), int(self.start_time_str[3:5]), int(self.start_time_str[6:8]))  
-                print(self.start_time)
+                hour_compensation = 12 if self.start_time_str[9:11] == "PM" else 0
+                self.start_time = datetime.datetime(self.start_time.year, self.start_time.month, self.start_time.day, int(self.start_time_str[:2]) + hour_compensation, int(self.start_time_str[3:5]), int(self.start_time_str[6:8]))  
                 self.day_number = len(self.data)
                 del(self.data[len(self.data)-1])
 
@@ -90,7 +90,7 @@ class StudySession:
 
         input()
         self.halt = True
-        progress_thread.join()
+        self.progress_thread.join()
         processEnd(self)
 
 
