@@ -30,7 +30,7 @@ class StudySession:
         self.halt = False
         self.day_number = 0
         self.start_time_str = None
-        self.self_time = 0
+        self.start_time = None
         self.progress_thread = None
 
     def calculate_session_length(self, start, end):
@@ -45,6 +45,20 @@ class StudySession:
         self.start_time = datetime.datetime.now()
         self.day_number = len(self.data) + 1
         self.start_time_str = self.start_time.strftime("%I:%M:%S %p")
+
+        if self.data[len(self.data) - 1]["date"] == self.start_time.strftime(
+            "%Y-%m-%d"
+        ):
+            continue_response = input(
+                "Would You Like To Continue Your Previous Session? "
+            )
+            if continue_response.lower() == "y":
+                self.start_time_str = self.data[len(self.data) - 1]["start_time"]
+                self.start_time = datetime.datetime(self.start_time.year, self.start_time.month, self.start_time.day, int(self.start_time_str[:2]), int(self.start_time_str[3:5]), int(self.start_time_str[6:8]))  
+                print(self.start_time)
+                self.day_number = len(self.data)
+                del(self.data[len(self.data)-1])
+
 
         def display_session_progress():
             while not self.halt:
@@ -63,7 +77,7 @@ class StudySession:
                 print(
                     f"""
      ╱|、
-    (˚ˎ 。7     Session in progress... {self.day_number} 
+    (˚ˎ 。7     Session in progress... 
      |、˜〵     Elapsed time: {session_duration_str}
      じしˍ,)ノ
                         """
@@ -116,7 +130,6 @@ def processEnd(session: StudySession):
 
     if TERM_OPEN:
         print(affirmations[random.randint(0, len(affirmations) - 1)])
-
 
 
 def main():
