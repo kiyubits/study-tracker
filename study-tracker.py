@@ -31,6 +31,7 @@ class StudySession:
         self.day_number = 0
         self.start_time_str = None
         self.self_time = 0
+        self.progress_thread = None
 
     def calculate_session_length(self, start, end):
         session_length = end - start
@@ -62,16 +63,16 @@ class StudySession:
                 print(
                     f"""
      ╱|、
-    (˚ˎ 。7     Session in progress... 
+    (˚ˎ 。7     Session in progress... {self.day_number} 
      |、˜〵     Elapsed time: {session_duration_str}
      じしˍ,)ノ
                         """
                 )
                 time.sleep(1)
 
-        progress_thread = threading.Thread(target=display_session_progress)
+        self.progress_thread = threading.Thread(target=display_session_progress)
         # progress_thread.daemon = True
-        progress_thread.start()
+        self.progress_thread.start()
 
         input()
         self.halt = True
@@ -126,6 +127,7 @@ def main():
     def sig_hup_handler(sig, *_):
         global TERM_OPEN
         session.halt = True
+        session.progress_thread.join()
         # Ensure we don't try to print to a closed terminal
         TERM_OPEN = False
         processEnd(session)
