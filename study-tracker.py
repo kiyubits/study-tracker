@@ -1,93 +1,160 @@
 import datetime
 import json
 import os
+import random
+import signal
+import sys
 import threading
 import time
-import random
 
-def calculate_session_length(start, end):
-    session_length = end - start
-    return session_length
+affirmations = [
+    "You did really well today!",
+    "Good job today :)",
+    "Keep going, you're improving everyday!",
+    "I hope you had a good session hehe",
+    "You are filled with determination.",
+    "Well done! You deserved this.",
+    "やった！",
+    "Study hard what interests you the most in the most undisciplined, irreverent and original manner possible.",
+    "The first principle is that you must not fool yourself and you are the easiest person to fool.",
+]
 
-def track_study_session():
-    file_name = 'study_sessions.json'
 
-    if os.path.exists(file_name):
-        with open(file_name, 'r') as file:
-            data = json.load(file)
-    else:
-        data = []
+TERM_OPEN = True
 
-    start_time = datetime.datetime.now()
-    day_number = len(data) + 1
-    start_time_str = start_time.strftime('%I:%M:%S %p')
 
-    def display_session_progress():
-        while True:
-            # Clear the screen
-            os.system('clear')
+class StudySession:
+    def __init__(self, filename):
+        self.filename = "study_sessions.json"
+        self.data = []
+        self.halt = False
+        self.day_number = 0
+        self.start_time_str = None
+        self.start_time = None
+        self.progress_thread = None
 
-            # Calculate the current session duration
-            current_time = datetime.datetime.now()
-            session_duration = current_time - start_time
-            hours, remainder = divmod(session_duration.total_seconds(), 3600)
-            minutes, seconds = divmod(remainder, 60)
-            session_duration_str = f"{int(hours):02}:{int(minutes):02}:{int(seconds):02}"
+    def calculate_session_length(self, start, end):
+        session_length = end - start
+        return session_length
 
-            print(f"""
- ╱|、
-(˚ˎ 。7     Session in progress... 
- |、˜〵     Elapsed time: {session_duration_str}
- じしˍ,)ノ
-                    """)
-            time.sleep(1)  
+    def track_study_session(self):
+        if os.path.exists(self.filename):
+            with open(self.filename, "r") as file:
+                self.data = json.load(file)
 
-    progress_thread = threading.Thread(target=display_session_progress)
-    progress_thread.daemon = True  
-    progress_thread.start()
+        self.start_time = datetime.datetime.now()
+        self.day_number = len(self.data) + 1
+        self.start_time_str = self.start_time.strftime("%I:%M:%S %p")
 
-    input()
+        if self.data[len(self.data) - 1]["date"] == self.start_time.strftime(
+            "%Y-%m-%d"
+        ):
+            continue_response = input(
+                "Would You Like To Continue Your Previous Session? "
+            )
+            if continue_response.lower() == "y":
+                self.start_time_str = self.data[len(self.data) - 1]["start_time"]
+                hour_compensation = 12 if self.start_time_str[9:11] == "PM" else 0
+                self.start_time = datetime.datetime(self.start_time.year, self.start_time.month, self.start_time.day, int(self.start_time_str[:2]) + hour_compensation, int(self.start_time_str[3:5]), int(self.start_time_str[6:8]))  
+                self.day_number = len(self.data)
+                del(self.data[len(self.data)-1])
 
-    affirmations = [
-        "You did really well today!",
-        "Good job today :)",
-        "Keep going, you're improving everyday!",
-        "I hope you had a good session hehe",
-        "You are filled with determination.",
-        "Well done! You deserved this.",
-        "やった！",
-        "Study hard what interests you the most in the most undisciplined, irreverent and original manner possible.",
-        "The first principle is that you must not fool yourself and you are the easiest person to fool."
-    ]
 
-    print(f"Studying Physics Everyday Until I Graduate University | Day {day_number}")
-    print(f"Session started at: {start_time_str}")
+        def display_session_progress():
+            while not self.halt:
+                # Clear the screen
+                os.system("clear")
+
+                # Calculate the current session duration
+                current_time = datetime.datetime.now()
+                session_duration = current_time - self.start_time
+                hours, remainder = divmod(session_duration.total_seconds(), 3600)
+                minutes, seconds = divmod(remainder, 60)
+                session_duration_str = (
+                    f"{int(hours):02}:{int(minutes):02}:{int(seconds):02}"
+                )
+
+                print(
+                    f"""
+     ╱|、
+    (˚ˎ 。7     Session in progress... 
+     |、˜〵     Elapsed time: {session_duration_str}
+     じしˍ,)ノ
+                        """
+                )
+                time.sleep(1)
+
+        self.progress_thread = threading.Thread(target=display_session_progress)
+        # progress_thread.daemon = True
+        self.progress_thread.start()
+
+        input()
+        self.halt = True
+        self.progress_thread.join()
+        processEnd(self)
+
+
+def processEnd(session: StudySession):
+    global TERM_OPEN
+    if TERM_OPEN:
+        print(
+            f"Studying Physics Everyday Until I Graduate University | Day {session.day_number}"
+        )
+        print(f"Session started at: {session.start_time_str}")
+
     end_time = datetime.datetime.now()
-    end_time_str = end_time.strftime('%I:%M:%S %p')
-    print(f"Session ended at: {end_time_str}")
+    end_time_str = end_time.strftime("%I:%M:%S %p")
+    if TERM_OPEN:
+        print(f"Session ended at: {end_time_str}")
 
-    session_length = calculate_session_length(start_time, end_time)
+    session_length = session.calculate_session_length(session.start_time, end_time)
 
     hours, remainder = divmod(session_length.total_seconds(), 3600)
     minutes, seconds = divmod(remainder, 60)
     session_length_str = f"{int(hours):02}:{int(minutes):02}:{int(seconds):02}"
-    print(f"Session length: {session_length_str}\n")
+    if TERM_OPEN:
+        print(f"Session length: {session_length_str}\n")
 
     session_data = {
-        "day": day_number,
-        "start_time": start_time_str,
+        "day": session.day_number,
+        "start_time": session.start_time_str,
         "end_time": end_time_str,
         "session_length": session_length_str,
-        "date": start_time.strftime('%Y-%m-%d')
+        "date": session.start_time.strftime("%Y-%m-%d"),
     }
 
-    data.append(session_data)
+    session.data.append(session_data)
 
-    with open(file_name, 'w') as file:
-        json.dump(data, file, indent=4)
+    with open(session.filename, "w") as file:
+        json.dump(session.data, file, indent=4)
 
-    print(affirmations[random.randint(0, len(affirmations) - 1)])
+    if TERM_OPEN:
+        print(affirmations[random.randint(0, len(affirmations) - 1)])
+
+
+def main():
+
+    session = StudySession("study_sessions.json")
+
+    # sent to program when terminal is closed
+    def sig_hup_handler(sig, *_):
+        global TERM_OPEN
+        session.halt = True
+        session.progress_thread.join()
+        # Ensure we don't try to print to a closed terminal
+        TERM_OPEN = False
+        processEnd(session)
+        sys.exit(0)
+
+    def sig_int_handler(sig, *_):
+        session.halt = True
+        processEnd(session)
+        sys.exit(0)
+
+    signal.signal(signal.SIGHUP, sig_hup_handler)
+    signal.signal(signal.SIGINT, sig_int_handler)
+    session.track_study_session()
+
 
 if __name__ == "__main__":
-    track_study_session()
-
+    main()
