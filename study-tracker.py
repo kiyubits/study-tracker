@@ -1,4 +1,5 @@
 import datetime
+import re
 import json
 import os
 import random
@@ -6,6 +7,7 @@ import signal
 import sys
 import threading
 import time
+from system_operations import find_clipboard, copy_to_clipboard
 
 affirmations = [
     "You did really well today!",
@@ -95,7 +97,6 @@ class StudySession:
 
 
 def processEnd(session: StudySession):
-    global TERM_OPEN
     if TERM_OPEN:
         print(
             f"Studying Physics Everyday Until I Graduate University | Day {session.day_number}"
@@ -130,12 +131,15 @@ def processEnd(session: StudySession):
 
     if TERM_OPEN:
         print(affirmations[random.randint(0, len(affirmations) - 1)])
+    string = json.dumps(session_data)
+    trim =string[1:len(string)-1]
+    copy_to_clipboard(trim)
 
 
 def main():
 
     session = StudySession("study_sessions.json")
-
+    find_clipboard()
     # sent to program when terminal is closed
     def sig_hup_handler(sig, *_):
         global TERM_OPEN
