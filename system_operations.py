@@ -14,9 +14,8 @@ def find_clipboard():
         .decode("utf-8")
     )
 
-    fields = user_id.strip().split()
-
-    cmd = ["loginctl", "show-session", fields[5], "-p", "Type"]
+    stripped_id = user_id.partition("\n")[2].split()[0]
+    cmd = ["loginctl", "show-session", stripped_id, "-p", "Type"]
 
     protocol = (
         subprocess.Popen(cmd, stdout=subprocess.PIPE)
@@ -48,4 +47,4 @@ def copy_to_clipboard(text: str):
 
 if __name__ == "__main__":
     find_clipboard()
-    copy_to_clipboard("not empty ")
+    copy_to_clipboard("empty its not a command silly")
