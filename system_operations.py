@@ -36,15 +36,13 @@ def copy_to_clipboard(text: str):
     if CLIPBOARD == "wl-clipboard":
         subprocess.Popen(["wl-copy", text], stdout=subprocess.PIPE)
     elif CLIPBOARD == "xclip":
-        init = subprocess.Popen(("printf", f"'{text}'"), stdout=subprocess.PIPE)
-        output = subprocess.check_output(("xclip", "-sel", "clip"), stdin=init.stdout)
-        init.wait()
+        proc = subprocess.Popen(["xclip", "-sel", "clip"], stdin=subprocess.PIPE)
+        proc.communicate(input=bytes(text, "utf-8"))
     else:
-        init = subprocess.Popen(("printf", f"'{text}'"), stdout=subprocess.PIPE)
-        output = subprocess.check_output(("xsel", "-b"), stdin=init.stdout)
-        init.wait()
+        proc = subprocess.Popen(["xsel", "-b"], stdin=subprocess.PIPE)
+        proc.communicate(input=bytes(text, "utf-8"))
 
 
 if __name__ == "__main__":
     find_clipboard()
-    copy_to_clipboard("empty its not a command silly")
+    copy_to_clipboard("clipboard test")
