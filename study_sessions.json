@@ -663,5 +663,12 @@
         "end_time": "09:55:39 PM",
         "session_length": "00:33:32",
         "date": "2024-08-15"
+    },
+    {
+        "day": 96,
+        "start_time": "01:57:46 PM",
+        "end_time": "06:29:56 PM",
+        "session_length": "04:32:09",
+        "date": "2024-08-16"
     }
 ]
