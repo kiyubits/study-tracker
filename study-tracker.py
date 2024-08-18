@@ -108,7 +108,6 @@ class StudySession:
                 time.sleep(1)
 
         self.progress_thread = threading.Thread(target=display_session_progress)
-        # progress_thread.daemon = True
         self.progress_thread.start()
 
         input()
@@ -145,7 +144,6 @@ def processEnd(session: StudySession):
         else:
             curr_break = "break_1"
         session.breaks[curr_break] = session.break_length_str
-        # TODO: MOST RECENT BREAK NEED TO BE SUBTRACTED FROM HERE
         session_length_str = strfdelta(time_str_to_timedelta(session_length_str) - session.break_length_delt)
         session_data = {
             "day": session.day_number,
