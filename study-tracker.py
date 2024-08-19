@@ -61,7 +61,14 @@ class StudySession:
             )
             if continue_response.lower() == "y":
                 self.start_time_str = self.data[len(self.data) - 1]["start_time"]
-                hour_compensation = 12 if self.start_time_str[9:11] == "PM" else 0
+                hour_compensation = 0
+                if self.start_time_str[9:11] == "PM":
+                    hour_compensation = 12
+                elif (
+                    self.start_time_str[9:11] == "AM"
+                    and self.start_time_str[0:2] == "12"
+                ):
+                    hour_compensation = -12
                 self.start_time = datetime.datetime(
                     self.start_time.year,
                     self.start_time.month,
@@ -74,7 +81,7 @@ class StudySession:
                 if self.data[len(self.data) - 1].get("breaks"):
                     self.breaks = self.data[len(self.data) - 1]["breaks"]
                 end_time = self.data[len(self.data) - 1]["end_time"]
-                hour_compensation = 12 if self.start_time_str[9:11] == "PM" else 0
+
                 dt_endtime = datetime.datetime(
                     self.start_time.year,
                     self.start_time.month,
@@ -127,7 +134,6 @@ def processEnd(session: StudySession):
     end_time_str = end_time.strftime("%I:%M:%S %p")
     if TERM_OPEN:
         print(f"Session ended at: {end_time_str}")
-
     session_length = session.calculate_session_length(session.start_time, end_time)
     session_length_str = strfdelta(session_length)
 
@@ -144,7 +150,9 @@ def processEnd(session: StudySession):
         else:
             curr_break = "break_1"
         session.breaks[curr_break] = session.break_length_str
-        session_length_str = strfdelta(time_str_to_timedelta(session_length_str) - session.break_length_delt)
+        session_length_str = strfdelta(
+            time_str_to_timedelta(session_length_str) - session.break_length_delt
+        )
         session_data = {
             "day": session.day_number,
             "start_time": session.start_time_str,
