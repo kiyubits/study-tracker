@@ -684,5 +684,12 @@
         "end_time": "07:00:00 PM",
         "session_length": "03:00:00",
         "date": "2024-08-18"
+    },
+    {
+        "day": 99,
+        "start_time": "12:00:00 PM",
+        "end_time": "01:00:00 PM",
+        "session_length": "01:00:00",
+        "date": "2024-08-19"
     }
 ]
