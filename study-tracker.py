@@ -142,11 +142,11 @@ def processEnd(session: StudySession):
 
     if session.break_length_str:
         if session.breaks:
-            reObj = re.compile("break_*")
-            sortedKeys = list(filter(reObj.match, session.breaks.keys()))
-            sortedKeys.sort(reverse=True)
-            maxBreak = sortedKeys[0]
-            curr_break = "break_" + str(int(maxBreak[6:]) + 1)
+            re_obj = re.compile("break_*")
+            sorted_keys = list(filter(re_obj.match, session.breaks.keys()))
+            sorted_keys.sort(reverse=True)
+            max_break = sorted_keys[0]
+            curr_break = "break_" + str(int(max_break[6:]) + 1)
         else:
             curr_break = "break_1"
         session.breaks[curr_break] = session.break_length_str

@@ -33,9 +33,16 @@ def find_clipboard():
 
 def copy_to_clipboard(input: dict):
     """Formats and copies to the first found clipboard."""
+    if('breaks' in input.keys()): 
+        breaks_list = [f'{key}: {value}\n' for key, value in input["breaks"].items()]
+        break_strings = ''.join(str(string) for string in breaks_list)
+    else:
+        break_strings = ''
+    
     formatted_text = (f'Studying Physics Everyday Until I Graduate University | Day {input["day"]}\n'
             f'Session started at: {input["start_time"]}\n'
             f'Session ended at: {input["end_time"]}\n'
+            f'{break_strings}'
             f'Session length: {input["session_length"]}\n')
             
     if CLIPBOARD == "wl-clipboard":
@@ -47,7 +54,3 @@ def copy_to_clipboard(input: dict):
         proc = subprocess.Popen(["xsel", "-b"], stdin=subprocess.PIPE)
         proc.communicate(input=bytes(formatted_text, "utf-8"))
 
-
-if __name__ == "__main__":
-    find_clipboard()
-    copy_to_clipboard("clipboard test")
