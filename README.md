@@ -31,6 +31,15 @@ stuff i want to learn
 
 some of this stuff i'll probably learn during uni, but i find that going through it in my own time, and at my own pace works so much better for me, especially for these topics which i needa spend a lotta time on
 
+# Requirements
+- python 3+
+- One of the following clipboards: 
+    - Wayland
+        - wl-clipboard
+    - X11
+        - xsel 
+        - xclip
+
 # How To Run
 
 you just need to run it like any python file, and i don't think extra packages are needed
