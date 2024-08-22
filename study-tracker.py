@@ -131,9 +131,7 @@ def processEnd(session: StudySession):
 
     if TERM_OPEN:
         print(affirmations[random.randint(0, len(affirmations) - 1)])
-    string = json.dumps(session_data)
-    trim =string[1:len(string)-1]
-    copy_to_clipboard(trim)
+    copy_to_clipboard(session_data)
 
 
 def main():
