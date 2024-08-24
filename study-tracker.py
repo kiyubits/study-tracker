@@ -38,10 +38,20 @@ class StudySession:
         self.progress_thread = None
         self.break_length_delt = None
         self.break_length_str = None
+        self.curr_session_start_time = None
         self.breaks = {}
 
     def calculate_session_length(self, start, end):
         session_length = end - start
+        if(self.break_length_str): 
+            session_length -= self.break_length_delt
+            for break_str in self.breaks.values():         
+                break_time = datetime.timedelta(
+                    hours=int(break_str[:2]), 
+                    minutes=int(break_str[3:5]),
+                    seconds=int(break_str[6:8]),
+                )
+                session_length -= break_time
         return session_length
 
     def track_study_session(self):
@@ -60,6 +70,7 @@ class StudySession:
                 "Would You Like To Continue Your Previous Session? "
             )
             if continue_response.lower() == "y":
+                self.curr_session_start_time = datetime.datetime.now() 
                 self.start_time_str = self.data[len(self.data) - 1]["start_time"]
                 hour_compensation = 0
                 if self.start_time_str[9:11] == "PM":
@@ -81,7 +92,7 @@ class StudySession:
                 if self.data[len(self.data) - 1].get("breaks"):
                     self.breaks = self.data[len(self.data) - 1]["breaks"]
                 end_time = self.data[len(self.data) - 1]["end_time"]
-
+                
                 dt_endtime = datetime.datetime(
                     self.start_time.year,
                     self.start_time.month,
@@ -90,18 +101,27 @@ class StudySession:
                     int(end_time[3:5]),
                     int(end_time[6:8]),
                 )
+                
                 self.break_length_delt = datetime.datetime.now() - dt_endtime
                 self.break_length_str = strfdelta(datetime.datetime.now() - dt_endtime)
                 del self.data[len(self.data) - 1]
+        else: 
+            # Reset Timer To Not Include Time Spent In Menu 
+            self.start_time = datetime.datetime.now()
 
         def display_session_progress():
+            if(self.curr_session_start_time): 
+                calc_start_time = self.curr_session_start_time
+            else: 
+                calc_start_time = self.start_time
+
             while not self.halt:
                 # Clear the screen
                 os.system("clear")
 
                 # Calculate the current session duration
                 current_time = datetime.datetime.now()
-                session_duration = current_time - self.start_time
+                session_duration = current_time - calc_start_time
                 session_duration_str = strfdelta(session_duration)
 
                 print(
@@ -150,9 +170,6 @@ def processEnd(session: StudySession):
         else:
             curr_break = "break_1"
         session.breaks[curr_break] = session.break_length_str
-        session_length_str = strfdelta(
-            time_str_to_timedelta(session_length_str) - session.break_length_delt
-        )
         session_data = {
             "day": session.day_number,
             "start_time": session.start_time_str,
