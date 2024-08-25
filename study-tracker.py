@@ -121,6 +121,7 @@ class StudySession:
             self.start_time = datetime.datetime.now()
 
         def display_session_progress():
+            global INIT
             INIT = True
             if(self.curr_session_start_time): 
                 calc_start_time = self.curr_session_start_time
