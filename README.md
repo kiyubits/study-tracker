@@ -33,7 +33,7 @@ some of this stuff i'll probably learn during uni, but i find that going through
 
 # Requirements
 - python 3+
-- One of the following clipboards: 
+- One of the following clipboards in order to use the session copy feature: 
     - Wayland
         - wl-clipboard
     - X11
