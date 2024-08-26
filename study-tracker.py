@@ -11,6 +11,7 @@ import time
 from system_operations import copy_to_clipboard, find_clipboard
 from utils import strfdelta, time_str_to_timedelta
 
+
 affirmations = [
     "You did really well today!",
     "Good job today :)",
@@ -23,8 +24,16 @@ affirmations = [
     "The first principle is that you must not fool yourself and you are the easiest person to fool.",
 ]
 
+valid_continue_responses = [
+    "y", 
+    "yes", 
+    "", 
+    "n", 
+    "no"
+]
 
 TERM_OPEN = True
+INIT = False
 
 
 class StudySession:
@@ -66,10 +75,12 @@ class StudySession:
         if self.data[len(self.data) - 1]["date"] == self.start_time.strftime(
             "%Y-%m-%d"
         ):
-            continue_response = input(
-                "Would You Like To Continue Your Previous Session? "
-            )
-            if continue_response.lower() == "y":
+            continue_response = None
+            while(not (continue_response in valid_continue_responses)):
+                continue_response = input(
+                    "Would You Like To Continue Your Previous Session? [y/n]:  "
+                )
+            if continue_response.lower() in ["y", "yes", ""]:
                 self.curr_session_start_time = datetime.datetime.now() 
                 self.start_time_str = self.data[len(self.data) - 1]["start_time"]
                 hour_compensation = 0
@@ -110,6 +121,8 @@ class StudySession:
             self.start_time = datetime.datetime.now()
 
         def display_session_progress():
+            global INIT
+            INIT = True
             if(self.curr_session_start_time): 
                 calc_start_time = self.curr_session_start_time
             else: 
@@ -144,6 +157,9 @@ class StudySession:
 
 
 def processEnd(session: StudySession):
+    # Ensure that prompting has completed before sessions file
+    if(not INIT): 
+        return
     if TERM_OPEN:
         print(
             f"Studying Physics Everyday Until I Graduate University | Day {session.day_number}"
