@@ -1,13 +1,15 @@
 import datetime
-import re
 import json
 import os
 import random
+import re
 import signal
 import sys
 import threading
 import time
-from system_operations import find_clipboard, copy_to_clipboard
+
+from system_operations import copy_to_clipboard, find_clipboard
+from utils import strfdelta, time_str_to_timedelta
 
 affirmations = [
     "You did really well today!",
@@ -34,9 +36,22 @@ class StudySession:
         self.start_time_str = None
         self.start_time = None
         self.progress_thread = None
+        self.break_length_delt = None
+        self.break_length_str = None
+        self.curr_session_start_time = None
+        self.breaks = {}
 
     def calculate_session_length(self, start, end):
         session_length = end - start
+        if(self.break_length_str): 
+            session_length -= self.break_length_delt
+            for break_str in self.breaks.values():         
+                break_time = datetime.timedelta(
+                    hours=int(break_str[:2]), 
+                    minutes=int(break_str[3:5]),
+                    seconds=int(break_str[6:8]),
+                )
+                session_length -= break_time
         return session_length
 
     def track_study_session(self):
@@ -55,26 +70,59 @@ class StudySession:
                 "Would You Like To Continue Your Previous Session? "
             )
             if continue_response.lower() == "y":
+                self.curr_session_start_time = datetime.datetime.now() 
                 self.start_time_str = self.data[len(self.data) - 1]["start_time"]
-                hour_compensation = 12 if self.start_time_str[9:11] == "PM" else 0
-                self.start_time = datetime.datetime(self.start_time.year, self.start_time.month, self.start_time.day, int(self.start_time_str[:2]) + hour_compensation, int(self.start_time_str[3:5]), int(self.start_time_str[6:8]))  
+                hour_compensation = 0
+                if self.start_time_str[9:11] == "PM":
+                    hour_compensation = 12
+                elif (
+                    self.start_time_str[9:11] == "AM"
+                    and self.start_time_str[0:2] == "12"
+                ):
+                    hour_compensation = -12
+                self.start_time = datetime.datetime(
+                    self.start_time.year,
+                    self.start_time.month,
+                    self.start_time.day,
+                    int(self.start_time_str[:2]) + hour_compensation,
+                    int(self.start_time_str[3:5]),
+                    int(self.start_time_str[6:8]),
+                )
                 self.day_number = len(self.data)
-                del(self.data[len(self.data)-1])
-
+                if self.data[len(self.data) - 1].get("breaks"):
+                    self.breaks = self.data[len(self.data) - 1]["breaks"]
+                end_time = self.data[len(self.data) - 1]["end_time"]
+                
+                dt_endtime = datetime.datetime(
+                    self.start_time.year,
+                    self.start_time.month,
+                    self.start_time.day,
+                    int(end_time[:2]) + hour_compensation,
+                    int(end_time[3:5]),
+                    int(end_time[6:8]),
+                )
+                
+                self.break_length_delt = datetime.datetime.now() - dt_endtime
+                self.break_length_str = strfdelta(datetime.datetime.now() - dt_endtime)
+                del self.data[len(self.data) - 1]
+        else: 
+            # Reset Timer To Not Include Time Spent In Menu 
+            self.start_time = datetime.datetime.now()
 
         def display_session_progress():
+            if(self.curr_session_start_time): 
+                calc_start_time = self.curr_session_start_time
+            else: 
+                calc_start_time = self.start_time
+
             while not self.halt:
                 # Clear the screen
                 os.system("clear")
 
                 # Calculate the current session duration
                 current_time = datetime.datetime.now()
-                session_duration = current_time - self.start_time
-                hours, remainder = divmod(session_duration.total_seconds(), 3600)
-                minutes, seconds = divmod(remainder, 60)
-                session_duration_str = (
-                    f"{int(hours):02}:{int(minutes):02}:{int(seconds):02}"
-                )
+                session_duration = current_time - calc_start_time
+                session_duration_str = strfdelta(session_duration)
 
                 print(
                     f"""
@@ -87,7 +135,6 @@ class StudySession:
                 time.sleep(1)
 
         self.progress_thread = threading.Thread(target=display_session_progress)
-        # progress_thread.daemon = True
         self.progress_thread.start()
 
         input()
@@ -107,22 +154,38 @@ def processEnd(session: StudySession):
     end_time_str = end_time.strftime("%I:%M:%S %p")
     if TERM_OPEN:
         print(f"Session ended at: {end_time_str}")
-
     session_length = session.calculate_session_length(session.start_time, end_time)
+    session_length_str = strfdelta(session_length)
 
-    hours, remainder = divmod(session_length.total_seconds(), 3600)
-    minutes, seconds = divmod(remainder, 60)
-    session_length_str = f"{int(hours):02}:{int(minutes):02}:{int(seconds):02}"
     if TERM_OPEN:
         print(f"Session length: {session_length_str}\n")
 
-    session_data = {
-        "day": session.day_number,
-        "start_time": session.start_time_str,
-        "end_time": end_time_str,
-        "session_length": session_length_str,
-        "date": session.start_time.strftime("%Y-%m-%d"),
-    }
+    if session.break_length_str:
+        if session.breaks:
+            re_obj = re.compile("break_*")
+            sorted_keys = list(filter(re_obj.match, session.breaks.keys()))
+            sorted_keys.sort(reverse=True)
+            max_break = sorted_keys[0]
+            curr_break = "break_" + str(int(max_break[6:]) + 1)
+        else:
+            curr_break = "break_1"
+        session.breaks[curr_break] = session.break_length_str
+        session_data = {
+            "day": session.day_number,
+            "start_time": session.start_time_str,
+            "breaks": session.breaks,
+            "end_time": end_time_str,
+            "session_length": session_length_str,
+            "date": session.start_time.strftime("%Y-%m-%d"),
+        }
+    else:
+        session_data = {
+            "day": session.day_number,
+            "start_time": session.start_time_str,
+            "end_time": end_time_str,
+            "session_length": session_length_str,
+            "date": session.start_time.strftime("%Y-%m-%d"),
+        }
 
     session.data.append(session_data)
 
@@ -138,6 +201,7 @@ def main():
 
     session = StudySession("study_sessions.json")
     find_clipboard()
+
     # sent to program when terminal is closed
     def sig_hup_handler(sig, *_):
         global TERM_OPEN
