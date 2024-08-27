@@ -210,17 +210,22 @@ def processEnd(session: StudySession):
         total_session_length = datetime.timedelta()
 
         for i, s in enumerate(sessions, start = 1):
-            print(f"Session {i}")
-            print(f"Session started at: {s["start_time"]}")        
-            print(f"Session ended at: {s["end_time"]}")
-            print(f"Session length: {s["session_length"]}\n")
+            print(f"Session {i}: {s["start_time"]} - {s["end_time"]} ({s["session_length"]})")
             total_session_length += time_str_to_timedelta(s["session_length"])
 
         print(f"Total time spent studying today: {total_session_length}\n")
             
         print(affirmations[random.randint(0, len(affirmations) - 1)])
 
-        # copy_to_clipboard(session_data)
+        # get most recent day for clipboard
+
+        clipboard_data = {
+            "day": session.day_number,
+            "sessions": sessions,
+            "total_time": total_session_length,
+        }
+
+        copy_to_clipboard(clipboard_data)
 
 #     if session.break_length_str:
 #         if session.breaks:
