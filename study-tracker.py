@@ -47,19 +47,19 @@ class StudySession:
         self.break_length_str = None
         self.curr_session_start_time = None
         self.multiple_sessions = False
-        self.sessions = {}
+        self.sessions = []
 
     def calculate_session_length(self, start, end):
         session_length = end - start
-        if(self.break_length_str): 
-            session_length -= self.break_length_delt
-            for break_str in self.breaks.values():         
-                break_time = datetime.timedelta(
-                    hours=int(break_str[:2]), 
-                    minutes=int(break_str[3:5]),
-                    seconds=int(break_str[6:8]),
-                )
-                session_length -= break_time
+        # if(self.break_length_str): 
+        #     session_length -= self.break_length_delt
+        #     for break_str in self.breaks.values():         
+        #         break_time = datetime.timedelta(
+        #             hours=int(break_str[:2]), 
+        #             minutes=int(break_str[3:5]),
+        #             seconds=int(break_str[6:8]),
+        #         )
+        #         session_length -= break_time
         return session_length
 
     def track_study_session(self):
@@ -71,20 +71,16 @@ class StudySession:
         self.day_number = len(self.data) + 1
         self.start_time_str = self.start_time.strftime("%I:%M:%S %p")
 
-        # so basically, i need to check if another session is started on the same day as the latest entry
-        # then i want to add the prompt that if another session is started, will it be part of the same one or a new one
-        # if not, just make a new session
-        # if so, add to the old session and indicate a break has been taken
-
         if len(self.data) != 0:
             if self.data[len(self.data) - 1]["date"] == self.start_time.strftime("%Y-%m-%d"):
-                continue_response = None
-                while (not (continue_response in valid_continue_responses)):
-                    continue_response = input("Would you like to continue your previous session? [y/n]  ")
+                # continue_response = None
+                # while (not (continue_response in valid_continue_responses)):
+                #     continue_response = input("Would you like to continue your previous session? [y/n]  ")
                 # put if loop to check multiple sessions or break
-                    self.multiple_sessions = True
-                    self.day_number = len(self.data)
-                    self.start_time = datetime.datetime.now()
+                self.multiple_sessions = True
+                self.sessions = self.data[len(self.data) - 1]["sessions"]
+                self.day_number = len(self.data)
+                self.start_time = datetime.datetime.now()
 
         # temporarily removing break functionality for later modification
 
@@ -181,11 +177,50 @@ def processEnd(session: StudySession):
     session_length = session.calculate_session_length(session.start_time, end_time)
     session_length_str = strfdelta(session_length)
 
+    if session.multiple_sessions:
+        session_data = {
+            "start_time": session.start_time_str,
+            "end_time": end_time_str,
+            "session_length": session_length_str,
+        }
+        session.data[len(session.data) - 1]["sessions"].append(session_data)
+    else:
+       session_data = {
+            "day": session.day_number,
+            "date": session.start_time.strftime("%Y-%m-%d"),
+            "sessions": [
+                { 
+                    "start_time": session.start_time_str,
+                    "end_time": end_time_str,
+                    "session_length": session_length_str,
+                }
+            ]
+        }   
+        
+       session.data.append(session_data)
+
+    with open(session.filename, "w") as file:
+        json.dump(session.data, file, indent = 4)
+
+    sessions = session.data[len(session.data) - 1]["sessions"]
+
     if TERM_OPEN:
-        print(f"Studying Physics Everyday Until I Graduate University | Day {session.day_number}")
-        print(f"Session started at: {session.start_time_str}")        
-        print(f"Session ended at: {end_time_str}")
-        print(f"Session length: {session_length_str}\n")
+        print(f"Studying Physics Everyday Until I Graduate University | Day {session.day_number}\n")
+       
+        total_session_length = datetime.timedelta()
+
+        for i, s in enumerate(sessions, start = 1):
+            print(f"Session {i}")
+            print(f"Session started at: {s["start_time"]}")        
+            print(f"Session ended at: {s["end_time"]}")
+            print(f"Session length: {s["session_length"]}\n")
+            total_session_length += time_str_to_timedelta(s["session_length"])
+
+        print(f"Total time spent studying today: {total_session_length}\n")
+            
+        print(affirmations[random.randint(0, len(affirmations) - 1)])
+
+        # copy_to_clipboard(session_data)
 
 #     if session.break_length_str:
 #         if session.breaks:
@@ -214,37 +249,15 @@ def processEnd(session: StudySession):
 #             "date": session.start_time.strftime("%Y-%m-%d"),
 #         }
 
-        if session.multiple_sessions:
-            session_data = {
-                "start_time": session.start_time_str,
-                "end_time": end_time_str,
-                "session_length": session_length_str,
-            }
-            
-            session.data[len(session.data) - 1]["sessions"].append(session_data)
-        else: 
-            session_data = {
-                "day": session.day_number,
-                "date": session.start_time.strftime("%Y-%m-%d"),
-                "sessions": [
-                    { 
-                        "start_time": session.start_time_str,
-                        "end_time": end_time_str,
-                        "session_length": session_length_str,
-                    }
-                ]
-            }
-            
-            session.data.append(session_data)
-
-    with open(session.filename, "w") as file:
-        json.dump(session.data, file, indent = 4)
-
-    if TERM_OPEN:
-        print(affirmations[random.randint(0, len(affirmations) - 1)])
-    
-    # TEMPORARY TO MESS AROUND WITH DICT STRUCTURE
-    # copy_to_clipboard(session_data)
+#         if session.multiple_sessions:
+#             session_data = {
+#                 "start_time": session.start_time_str,
+#                 "end_time": end_time_str,
+#                 "session_length": session_length_str,
+#             }
+#             
+#             session.data[len(session.data) - 1]["sessions"].append(session_data)
+#         else: 
 
 def main():
     session = StudySession("study_sessions.json")
