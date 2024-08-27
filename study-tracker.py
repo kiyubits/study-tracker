@@ -51,15 +51,6 @@ class StudySession:
 
     def calculate_session_length(self, start, end):
         session_length = end - start
-        # if(self.break_length_str): 
-        #     session_length -= self.break_length_delt
-        #     for break_str in self.breaks.values():         
-        #         break_time = datetime.timedelta(
-        #             hours=int(break_str[:2]), 
-        #             minutes=int(break_str[3:5]),
-        #             seconds=int(break_str[6:8]),
-        #         )
-        #         session_length -= break_time
         return session_length
 
     def track_study_session(self):
@@ -73,64 +64,10 @@ class StudySession:
 
         if len(self.data) != 0:
             if self.data[len(self.data) - 1]["date"] == self.start_time.strftime("%Y-%m-%d"):
-                # continue_response = None
-                # while (not (continue_response in valid_continue_responses)):
-                #     continue_response = input("Would you like to continue your previous session? [y/n]  ")
-                # put if loop to check multiple sessions or break
                 self.multiple_sessions = True
                 self.sessions = self.data[len(self.data) - 1]["sessions"]
                 self.day_number = len(self.data)
                 self.start_time = datetime.datetime.now()
-
-        # temporarily removing break functionality for later modification
-
-        # if self.data[len(self.data) - 1]["date"] == self.start_time.strftime(
-        #     "%Y-%m-%d"
-        # ):
-        #     continue_response = None
-        #     while(not (continue_response in valid_continue_responses)):
-        #         continue_response = input(
-        #             "Would You Like To Continue Your Previous Session? [y/n]:  "
-        #         )
-        #     if continue_response.lower() in ["y", "yes", ""]:
-        #         self.curr_session_start_time = datetime.datetime.now() 
-        #         self.start_time_str = self.data[len(self.data) - 1]["start_time"]
-        #         hour_compensation = 0
-        #         if self.start_time_str[9:11] == "PM":
-        #             hour_compensation = 12
-        #         elif (
-        #             self.start_time_str[9:11] == "AM"
-        #             and self.start_time_str[0:2] == "12"
-        #         ):
-        #             hour_compensation = -12
-        #         self.start_time = datetime.datetime(
-        #             self.start_time.year,
-        #             self.start_time.month,
-        #             self.start_time.day,
-        #             int(self.start_time_str[:2]) + hour_compensation,
-        #             int(self.start_time_str[3:5]),
-        #             int(self.start_time_str[6:8]),
-        #         )
-        #         self.day_number = len(self.data)
-        #         if self.data[len(self.data) - 1].get("breaks"):
-        #             self.breaks = self.data[len(self.data) - 1]["breaks"]
-        #         end_time = self.data[len(self.data) - 1]["end_time"]
-        #         
-        #         dt_endtime = datetime.datetime(
-        #             self.start_time.year,
-        #             self.start_time.month,
-        #             self.start_time.day,
-        #             int(end_time[:2]) + hour_compensation,
-        #             int(end_time[3:5]),
-        #             int(end_time[6:8]),
-        #         )
-        #         
-        #         self.break_length_delt = datetime.datetime.now() - dt_endtime
-        #         self.break_length_str = strfdelta(datetime.datetime.now() - dt_endtime)
-        #         del self.data[len(self.data) - 1]
-        # else: 
-        #     # Reset Timer To Not Include Time Spent In Menu 
-        #     self.start_time = datetime.datetime.now()
 
         def display_session_progress():
             global INIT
@@ -226,43 +163,6 @@ def processEnd(session: StudySession):
         }
 
         copy_to_clipboard(clipboard_data)
-
-#     if session.break_length_str:
-#         if session.breaks:
-#             re_obj = re.compile("break_*")
-#             sorted_keys = list(filter(re_obj.match, session.breaks.keys()))
-#             sorted_keys.sort(reverse=True)
-#             max_break = sorted_keys[0]
-#             curr_break = "break_" + str(int(max_break[6:]) + 1)
-#         else:
-#             curr_break = "break_1"
-#         session.breaks[curr_break] = session.break_length_str
-#         session_data = {
-#             "day": session.day_number,
-#             "start_time": session.start_time_str,
-#             "breaks": session.breaks,
-#             "end_time": end_time_str,
-#             "session_length": session_length_str,
-#             "date": session.start_time.strftime("%Y-%m-%d"),
-#         }
-#     else:
-#         session_data = {
-#             "day": session.day_number,
-#             "start_time": session.start_time_str,
-#             "end_time": end_time_str,
-#             "session_length": session_length_str,
-#             "date": session.start_time.strftime("%Y-%m-%d"),
-#         }
-
-#         if session.multiple_sessions:
-#             session_data = {
-#                 "start_time": session.start_time_str,
-#                 "end_time": end_time_str,
-#                 "session_length": session_length_str,
-#             }
-#             
-#             session.data[len(session.data) - 1]["sessions"].append(session_data)
-#         else: 
 
 def main():
     session = StudySession("study_sessions.json")
