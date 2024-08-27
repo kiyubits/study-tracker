@@ -1,1 +1,744 @@
-[]
+[
+    {
+        "day": 1,
+        "start_time": "10:00:00 PM",
+        "end_time": "11:00:00 PM",
+        "session_length": "01:00:00",
+        "date": "2024-05-14"
+    },
+    {
+        "day": 2,
+        "start_time": "10:00:00 PM",
+        "end_time": "11:00:00 PM",
+        "session_length": "01:00:00",
+        "date": "2024-05-15"
+    },
+    {
+        "day": 3,
+        "start_time": "10:00:00 PM",
+        "end_time": "11:00:00 PM",
+        "session_length": "01:00:00",
+        "date": "2024-05-16"
+    },
+    {
+        "day": 4,
+        "start_time": "10:00:00 PM",
+        "end_time": "11:00:00 PM",
+        "session_length": "01:00:00",
+        "date": "2024-05-17"
+    },
+    {
+        "day": 5,
+        "start_time": "10:00:00 PM",
+        "end_time": "11:00:00 PM",
+        "session_length": "01:00:00",
+        "date": "2024-05-18"
+    },
+    {
+        "day": 6,
+        "start_time": "10:00:00 PM",
+        "end_time": "11:00:00 PM",
+        "session_length": "01:00:00",
+        "date": "2024-05-19"
+    },
+    {
+        "day": 7,
+        "start_time": "10:00:00 PM",
+        "end_time": "11:00:00 PM",
+        "session_length": "01:00:00",
+        "date": "2024-05-20"
+    },
+    {
+        "day": 8,
+        "start_time": "10:00:00 PM",
+        "end_time": "11:00:00 PM",
+        "session_length": "01:00:00",
+        "date": "2024-05-21"
+    },
+    {
+        "day": 9,
+        "start_time": "10:00:00 PM",
+        "end_time": "11:00:00 PM",
+        "session_length": "01:00:00",
+        "date": "2024-05-22"
+    },
+    {
+        "day": 10,
+        "start_time": "10:00:00 PM",
+        "end_time": "11:00:00 PM",
+        "session_length": "01:00:00",
+        "date": "2024-05-23"
+    },
+    {
+        "day": 11,
+        "start_time": "10:56:25 PM",
+        "end_time": "11:23:56 PM",
+        "session_length": "01:27:30",
+        "date": "2024-05-24"
+    },
+    {
+        "day": 12,
+        "start_time": "11:07:24 PM",
+        "end_time": "12:06:04 AM",
+        "session_length": "00:58:39",
+        "date": "2024-05-25"
+    },
+    {
+        "day": 13,
+        "start_time": "10:07:46 PM",
+        "end_time": "11:20:37 PM",
+        "session_length": "01:11:51",
+        "date": "2024-05-26"
+    },
+    {
+        "day": 14,
+        "start_time": "11:49:40 PM",
+        "end_time": "12:47:08 AM",
+        "session_length": "00:57:27",
+        "date": "2024-05-27"
+    },
+    {
+        "day": 15,
+        "start_time": "11:09:33 PM",
+        "end_time": "12:50:22 AM",
+        "session_length": "01:40:48",
+        "date": "2024-05-28"
+    },
+    {
+        "day": 16,
+        "start_time": "10:58:00 PM",
+        "end_time": "11:59:00 PM",
+        "session_length": "01:01:00",
+        "date": "2024-05-29"
+    },
+    {
+        "day": 17,
+        "start_time": "10:32:21 PM",
+        "end_time": "10:54:12 PM",
+        "session_length": "00:21:51",
+        "date": "2024-05-30"
+    },
+    {
+        "day": 18,
+        "start_time": "09:45:13 PM",
+        "end_time": "12:14:09 AM",
+        "session_length": "02:28:56",
+        "date": "2024-05-31"
+    },
+    {
+        "day": 19,
+        "start_time": "10:14:04 PM",
+        "end_time": "10:54:11 PM",
+        "session_length": "00:40:06",
+        "date": "2024-06-01"
+    },
+    {
+        "day": 20,
+        "start_time": "10:22:36 PM",
+        "end_time": "10:48:14 PM",
+        "session_length": "00:25:37",
+        "date": "2024-06-02"
+    },
+    {
+        "day": 21,
+        "start_time": "10:07:27 PM",
+        "end_time": "11:37:35 PM",
+        "session_length": "01:30:07",
+        "date": "2024-06-03"
+    },
+    {
+        "day": 22,
+        "start_time": "11:44:53 PM",
+        "end_time": "12:15:34 AM",
+        "session_length": "00:30:41",
+        "date": "2024-06-04"
+    },
+    {
+        "day": 23,
+        "start_time": "10:33:51 PM",
+        "end_time": "11:48:01 PM",
+        "session_length": "01:14:09",
+        "date": "2024-06-05"
+    },
+    {
+        "day": 24,
+        "start_time": "11:50:10 PM",
+        "end_time": "12:24:24 AM",
+        "session_length": "00:34:13",
+        "date": "2024-06-06"
+    },
+    {
+        "day": 25,
+        "start_time": "11:00:40 PM",
+        "end_time": "12:01:11 AM",
+        "session_length": "01:00:31",
+        "date": "2024-06-07"
+    },
+    {
+        "day": 26,
+        "start_time": "10:57:31 PM",
+        "end_time": "12:00:21 AM",
+        "session_length": "01:02:50",
+        "date": "2024-06-08"
+    },
+    {
+        "day": 27,
+        "start_time": "11:54:26 PM",
+        "end_time": "12:14:18 AM",
+        "session_length": "00:19:52",
+        "date": "2024-06-09"
+    },
+    {
+        "day": 28,
+        "start_time": "08:59:17 PM",
+        "end_time": "11:51:45 PM",
+        "session_length": "02:52:27",
+        "date": "2024-06-10"
+    },
+    {
+        "day": 29,
+        "start_time": "11:46:13 PM",
+        "end_time": "12:13:38 AM",
+        "session_length": "00:27:24",
+        "date": "2024-06-11"
+    },
+    {
+        "day": 30,
+        "start_time": "11:11:52 PM",
+        "end_time": "11:41:07 PM",
+        "session_length": "00:29:15",
+        "date": "2024-06-12"
+    },
+    {
+        "day": 31,
+        "start_time": "09:08:34 PM",
+        "end_time": "09:28:15 PM",
+        "session_length": "00:19:41",
+        "date": "2024-06-13"
+    },
+    {
+        "day": 32,
+        "start_time": "11:52:37 PM",
+        "end_time": "12:34:25 AM",
+        "session_length": "00:41:48",
+        "date": "2024-06-14"
+    },
+    {
+        "day": 33,
+        "start_time": "11:58:03 PM",
+        "end_time": "12:31:02 AM",
+        "session_length": "00:32:58",
+        "date": "2024-06-15"
+    },
+    {
+        "day": 34,
+        "start_time": "12:31:10 AM",
+        "end_time": "01:09:23 AM",
+        "session_length": "00:38:12",
+        "date": "2024-06-16"
+    },
+    {
+        "day": 35,
+        "start_time": "11:54:37 PM",
+        "end_time": "12:35:18 AM",
+        "session_length": "00:40:40",
+        "date": "2024-06-16"
+    },
+    {
+        "day": 36,
+        "start_time": "11:52:54 PM",
+        "end_time": "12:22:59 AM",
+        "session_length": "00:30:04",
+        "date": "2024-06-17"
+    },
+    {
+        "day": 37,
+        "start_time": "11:43:30 PM",
+        "end_time": "12:22:42 AM",
+        "session_length": "00:39:11",
+        "date": "2024-06-18"
+    },
+    {
+        "day": 38,
+        "start_time": "11:57:37 PM",
+        "end_time": "12:25:30 AM",
+        "session_length": "00:27:53",
+        "date": "2024-06-19"
+    },
+    {
+        "day": 39,
+        "start_time": "10:04:16 PM",
+        "end_time": "10:27:58 PM",
+        "session_length": "00:23:41",
+        "date": "2024-06-20"
+    },
+    {
+        "day": 40,
+        "start_time": "12:49:42 AM",
+        "end_time": "12:58:43 AM",
+        "session_length": "00:09:01",
+        "date": "2024-06-22"
+    },
+    {
+        "day": 41,
+        "start_time": "12:55:10 AM",
+        "end_time": "01:07:11 AM",
+        "session_length": "00:12:00",
+        "date": "2024-06-23"
+    },
+    {
+        "day": 42,
+        "start_time": "12:19:03 AM",
+        "end_time": "01:26:45 AM",
+        "session_length": "01:07:42",
+        "date": "2024-06-24"
+    },
+    {
+        "day": 43,
+        "start_time": "12:42:53 AM",
+        "end_time": "01:03:31 AM",
+        "session_length": "00:20:37",
+        "date": "2024-06-25"
+    },
+    {
+        "day": 44,
+        "start_time": "10:16:04 PM",
+        "end_time": "11:35:31 PM",
+        "session_length": "01:19:26",
+        "date": "2024-06-25"
+    },
+    {
+        "day": 45,
+        "start_time": "12:15:21 AM",
+        "end_time": "12:28:20 AM",
+        "session_length": "00:12:59",
+        "date": "2024-06-27"
+    },
+    {
+        "day": 46,
+        "start_time": "10:44:34 PM",
+        "end_time": "11:10:49 PM",
+        "session_length": "00:26:14",
+        "date": "2024-06-27"
+    },
+    {
+        "day": 47,
+        "start_time": "12:43:15 AM",
+        "end_time": "01:09:15 AM",
+        "session_length": "00:26:00",
+        "date": "2024-06-29"
+    },
+    {
+        "day": 48,
+        "start_time": "12:50:34 AM",
+        "end_time": "12:57:43 AM",
+        "session_length": "00:07:08",
+        "date": "2024-06-30"
+    },
+    {
+        "day": 49,
+        "start_time": "11:22:01 PM",
+        "end_time": "12:30:01 AM",
+        "session_length": "01:07:59",
+        "date": "2024-06-30"
+    },
+    {
+        "day": 50,
+        "start_time": "12:35:40 AM",
+        "end_time": "12:51:36 AM",
+        "session_length": "00:15:56",
+        "date": "2024-07-02"
+    },
+    {
+        "day": 51,
+        "start_time": "11:55:00 PM",
+        "end_time": "12:20:23 AM",
+        "session_length": "00:25:22",
+        "date": "2024-07-02"
+    },
+    {
+        "day": 52,
+        "start_time": "11:27:25 PM",
+        "end_time": "12:58:15 AM",
+        "session_length": "01:30:50",
+        "date": "2024-07-03"
+    },
+    {
+        "day": 53,
+        "start_time": "11:53:57 PM",
+        "end_time": "12:18:52 AM",
+        "session_length": "00:24:55",
+        "date": "2024-07-04"
+    },
+    {
+        "day": 54,
+        "start_time": "12:44:16 AM",
+        "end_time": "01:01:14 AM",
+        "session_length": "00:16:57",
+        "date": "2024-07-06"
+    },
+    {
+        "day": 55,
+        "start_time": "09:19:40 PM",
+        "end_time": "09:37:50 PM",
+        "session_length": "00:18:10",
+        "date": "2024-07-06"
+    },
+    {
+        "day": 56,
+        "start_time": "11:26:48 PM",
+        "end_time": "11:56:55 PM",
+        "session_length": "00:30:06",
+        "date": "2024-07-07"
+    },
+    {
+        "day": 57,
+        "start_time": "12:01:43 AM",
+        "end_time": "12:37:43 AM",
+        "session_length": "00:35:59",
+        "date": "2024-07-09"
+    },
+    {
+        "day": 58,
+        "start_time": "12:46:48 AM",
+        "end_time": "01:13:35 AM",
+        "session_length": "00:26:46",
+        "date": "2024-07-10"
+    },
+    {
+        "day": 59,
+        "start_time": "12:44:41 AM",
+        "end_time": "12:53:43 AM",
+        "session_length": "00:09:01",
+        "date": "2024-07-11"
+    },
+    {
+        "day": 60,
+        "start_time": "12:22:09 AM",
+        "end_time": "12:43:15 AM",
+        "session_length": "00:21:06",
+        "date": "2024-07-12"
+    },
+    {
+        "day": 61,
+        "start_time": "10:11:13 PM",
+        "end_time": "10:29:31 PM",
+        "session_length": "00:18:18",
+        "date": "2024-07-12"
+    },
+    {
+        "day": 62,
+        "start_time": "10:08:10 PM",
+        "end_time": "11:36:00 PM",
+        "session_length": "01:27:50",
+        "date": "2024-07-13"
+    },
+    {
+        "day": 63,
+        "start_time": "12:11:36 AM",
+        "end_time": "12:27:51 AM",
+        "session_length": "00:16:15",
+        "date": "2024-07-15"
+    },
+    {
+        "day": 64,
+        "start_time": "12:47:00 AM",
+        "end_time": "01:09:34 AM",
+        "session_length": "00:22:34",
+        "date": "2024-07-16"
+    },
+    {
+        "day": 65,
+        "start_time": "12:50:32 AM",
+        "end_time": "01:02:01 AM",
+        "session_length": "00:11:28",
+        "date": "2024-07-17"
+    },
+    {
+        "day": 66,
+        "start_time": "09:16:00 PM",
+        "end_time": "09:46:42 PM",
+        "session_length": "00:30:41",
+        "date": "2024-07-17"
+    },
+    {
+        "day": 67,
+        "start_time": "06:35:29 PM",
+        "end_time": "07:12:48 PM",
+        "session_length": "00:37:18",
+        "date": "2024-07-18"
+    },
+    {
+        "day": 68,
+        "start_time": "06:33:16 PM",
+        "end_time": "07:08:45 PM",
+        "session_length": "00:35:29",
+        "date": "2024-07-19"
+    },
+    {
+        "day": 69,
+        "start_time": "10:39:47 PM",
+        "end_time": "11:38:19 PM",
+        "session_length": "00:58:31",
+        "date": "2024-07-20"
+    },
+    {
+        "day": 70,
+        "start_time": "11:51:30 PM",
+        "end_time": "12:09:02 AM",
+        "session_length": "00:17:32",
+        "date": "2024-07-21"
+    },
+    {
+        "day": 71,
+        "start_time": "09:55:53 PM",
+        "end_time": "10:19:01 PM",
+        "session_length": "00:23:07",
+        "date": "2024-07-22"
+    },
+    {
+        "day": 72,
+        "start_time": "12:45:22 AM",
+        "end_time": "12:54:13 AM",
+        "session_length": "00:08:50",
+        "date": "2024-07-24"
+    },
+    {
+        "day": 73,
+        "start_time": "10:25:23 PM",
+        "end_time": "10:46:59 PM",
+        "session_length": "00:21:35",
+        "date": "2024-07-24"
+    },
+    {
+        "day": 74,
+        "start_time": "12:40:08 AM",
+        "end_time": "12:57:58 AM",
+        "session_length": "00:17:49",
+        "date": "2024-07-26"
+    },
+    {
+        "day": 75,
+        "start_time": "12:40:29 AM",
+        "end_time": "12:58:40 AM",
+        "session_length": "00:18:10",
+        "date": "2024-07-27"
+    },
+    {
+        "day": 76,
+        "start_time": "12:02:58 AM",
+        "end_time": "12:27:25 AM",
+        "session_length": "00:24:26",
+        "date": "2024-07-28"
+    },
+    {
+        "day": 77,
+        "start_time": "12:41:03 AM",
+        "end_time": "01:00:04 AM",
+        "session_length": "00:19:01",
+        "date": "2024-07-29"
+    },
+    {
+        "day": 78,
+        "start_time": "12:23:01 AM",
+        "end_time": "12:49:34 AM",
+        "session_length": "00:26:32",
+        "date": "2024-07-30"
+    },
+    {
+        "day": 79,
+        "start_time": "12:21:13 AM",
+        "end_time": "12:36:56 AM",
+        "session_length": "00:15:42",
+        "date": "2024-07-31"
+    },
+    {
+        "day": 80,
+        "start_time": "11:44:46 PM",
+        "end_time": "12:03:17 AM",
+        "session_length": "00:18:30",
+        "date": "2024-07-31"
+    },
+    {
+        "day": 81,
+        "start_time": "08:47:55 PM",
+        "end_time": "09:26:33 PM",
+        "session_length": "00:38:37",
+        "date": "2024-08-01"
+    },
+    {
+        "day": 82,
+        "start_time": "12:40:53 AM",
+        "end_time": "01:15:23 AM",
+        "session_length": "00:34:29",
+        "date": "2024-08-03"
+    },
+    {
+        "day": 83,
+        "start_time": "08:31:26 PM",
+        "end_time": "08:59:46 PM",
+        "session_length": "00:28:19",
+        "date": "2024-08-03"
+    },
+    {
+        "day": 84,
+        "start_time": "08:30:55 PM",
+        "end_time": "08:43:39 PM",
+        "session_length": "00:12:43",
+        "date": "2024-08-04"
+    },
+    {
+        "day": 85,
+        "start_time": "12:45:48 AM",
+        "end_time": "01:02:33 AM",
+        "session_length": "00:16:44",
+        "date": "2024-08-06"
+    },
+    {
+        "day": 86,
+        "start_time": "4:30:00 PM",
+        "end_time": "06:30:00 PM",
+        "session_length": "02:00:00",
+        "date": "2024-08-06"
+    },
+    {
+        "day": 87,
+        "start_time": "09:33:05 PM",
+        "end_time": "11:10:02 PM",
+        "session_length": "01:36:57",
+        "date": "2024-08-07"
+    },
+    {
+        "day": 88,
+        "start_time": "03:07:49 PM",
+        "end_time": "06:19:33 PM",
+        "session_length": "03:11:44",
+        "date": "2024-08-08"
+    },
+    {
+        "day": 89,
+        "start_time": "09:53:27 PM",
+        "end_time": "11:20:37 PM",
+        "session_length": "01:27:10",
+        "date": "2024-08-09"
+    },
+    {
+        "day": 90,
+        "start_time": "09:24:26 PM",
+        "end_time": "11:15:17 PM",
+        "session_length": "01:50:50",
+        "date": "2024-08-10"
+    },
+    {
+        "day": 91,
+        "start_time": "10:11:27 PM",
+        "end_time": "11:48:09 PM",
+        "session_length": "01:36:41",
+        "date": "2024-08-11"
+    },
+    {
+        "day": 92,
+        "start_time": "11:20:23 PM",
+        "end_time": "12:23:34 AM",
+        "session_length": "01:03:10",
+        "date": "2024-08-12"
+    },
+    {
+        "day": 93,
+        "start_time": "04:53:42 PM",
+        "end_time": "05:53:50 PM",
+        "session_length": "01:00:08",
+        "date": "2024-08-13"
+    },
+    {
+        "day": 94,
+        "start_time": "01:00:00 PM",
+        "end_time": "04:00:00 PM",
+        "session_length": "03:00:00",
+        "date": "2024-08-14"
+    },
+    {
+        "day": 95,
+        "start_time": "09:22:07 PM",
+        "end_time": "09:55:39 PM",
+        "session_length": "00:33:32",
+        "date": "2024-08-15"
+    },
+    {
+        "day": 96,
+        "start_time": "01:57:46 PM",
+        "end_time": "06:29:56 PM",
+        "session_length": "04:32:09",
+        "date": "2024-08-16"
+    },
+    {
+        "day": 97,
+        "start_time": "09:11:32 PM",
+        "end_time": "11:38:31 PM",
+        "session_length": "02:26:58",
+        "date": "2024-08-17"
+    },
+    {
+        "day": 98,
+        "start_time": "04:00:00 PM",
+        "end_time": "07:00:00 PM",
+        "session_length": "03:00:00",
+        "date": "2024-08-18"
+    },
+    {
+        "day": 99,
+        "start_time": "12:00:00 PM",
+        "end_time": "01:00:00 PM",
+        "session_length": "01:00:00",
+        "date": "2024-08-19"
+    },
+    {
+        "day": 100,
+        "start_time": "02:42:44 PM",
+        "end_time": "04:05:37 PM",
+        "session_length": "01:22:53",
+        "date": "2024-08-20"
+    },
+    {
+        "day": 101,
+        "start_time": "11:25:18 PM",
+        "end_time": "11:42:59 PM",
+        "session_length": "00:17:41",
+        "date": "2024-08-21"
+    },
+    {
+        "day": 102,
+        "start_time": "11:55:19 PM",
+        "end_time": "12:13:49 AM",
+        "session_length": "00:18:29",
+        "date": "2024-08-22"
+    },
+    {
+        "day": 103,
+        "start_time": "12:27:49 AM",
+        "end_time": "12:45:29 AM",
+        "session_length": "00:17:40",
+        "date": "2024-08-24"
+    },
+    {
+        "day": 104,
+        "start_time": "11:25:49 PM",
+        "end_time": "12:00:02 AM",
+        "session_length": "00:34:13",
+        "date": "2024-08-24"
+    },
+    {
+        "day": 105,
+        "start_time": "12:06:25 AM",
+        "end_time": "12:43:25 AM",
+        "session_length": "00:37:00",
+        "date": "2024-08-26"
+    },
+    {
+        "day": 106,
+        "start_time": "11:15:20 PM",
+        "end_time": "11:55:40 PM",
+        "session_length": "00:40:20",
+        "date": "2024-08-26"
+    }
+]
