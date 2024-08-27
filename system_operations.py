@@ -32,17 +32,19 @@ def find_clipboard():
 
 def copy_to_clipboard(input: dict):
     """Formats and copies to the first found clipboard."""
-    if('breaks' in input.keys()): 
-        breaks_list = [f'{key}: {value}\n' for key, value in input["breaks"].items()]
-        break_strings = ''.join(str(string) for string in breaks_list)
-    else:
-        break_strings = ''
+#     if('breaks' in input.keys()): 
+#         breaks_list = [f'{key}: {value}\n' for key, value in input["breaks"].items()]
+#         break_strings = ''.join(str(string) for string in breaks_list)
+#     else:
+#         break_strings = ''
     
-    formatted_text = (f'Studying Physics Everyday Until I Graduate University | Day {input["day"]}\n'
-            f'Session started at: {input["sessions"]["start_time"]}\n'
-            f'Session ended at: {input["sessions"]["end_time"]}\n'
-            f'Session length: {input["sessions"]["session_length"]}')
-            
+    formatted_text = f"Studying Physics Everyday Until I Graduate University | Day {input["day"]}\n"
+
+    for i, session in enumerate(input["sessions"], start = 1):
+        formatted_text += f"Session {i}: {session["start_time"]} - {session["end_time"]} ({session["session_length"]})\n"
+
+    formatted_text += f"Total time spent studying today: {input["total_time"]}"
+
     if CLIPBOARD == "wl-clipboard":
         subprocess.Popen(["wl-copy", formatted_text], stdout=subprocess.PIPE)
     elif CLIPBOARD == "xclip":

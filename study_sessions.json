@@ -4,14 +4,24 @@
         "date": "2024-08-27",
         "sessions": [
             {
-                "start_time": "06:36:37 PM",
-                "end_time": "06:36:48 PM",
-                "session_length": "00:00:11"
+                "start_time": "06:55:14 PM",
+                "end_time": "06:55:20 PM",
+                "session_length": "00:00:06"
             },
             {
-                "start_time": "06:36:53 PM",
-                "end_time": "06:37:10 PM",
-                "session_length": "00:00:17"
+                "start_time": "06:56:22 PM",
+                "end_time": "06:56:28 PM",
+                "session_length": "00:00:06"
+            },
+            {
+                "start_time": "06:56:32 PM",
+                "end_time": "06:56:45 PM",
+                "session_length": "00:00:13"
+            },
+            {
+                "start_time": "06:58:22 PM",
+                "end_time": "06:58:28 PM",
+                "session_length": "00:00:06"
             }
         ]
     }
