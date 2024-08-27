@@ -35,7 +35,6 @@ valid_continue_responses = [
 TERM_OPEN = True
 INIT = False
 
-
 class StudySession:
     def __init__(self, filename):
         self.filename = "study_sessions.json"
@@ -72,53 +71,55 @@ class StudySession:
         self.day_number = len(self.data) + 1
         self.start_time_str = self.start_time.strftime("%I:%M:%S %p")
 
-        if self.data[len(self.data) - 1]["date"] == self.start_time.strftime(
-            "%Y-%m-%d"
-        ):
-            continue_response = None
-            while(not (continue_response in valid_continue_responses)):
-                continue_response = input(
-                    "Would You Like To Continue Your Previous Session? [y/n]:  "
-                )
-            if continue_response.lower() in ["y", "yes", ""]:
-                self.curr_session_start_time = datetime.datetime.now() 
-                self.start_time_str = self.data[len(self.data) - 1]["start_time"]
-                hour_compensation = 0
-                if self.start_time_str[9:11] == "PM":
-                    hour_compensation = 12
-                elif (
-                    self.start_time_str[9:11] == "AM"
-                    and self.start_time_str[0:2] == "12"
-                ):
-                    hour_compensation = -12
-                self.start_time = datetime.datetime(
-                    self.start_time.year,
-                    self.start_time.month,
-                    self.start_time.day,
-                    int(self.start_time_str[:2]) + hour_compensation,
-                    int(self.start_time_str[3:5]),
-                    int(self.start_time_str[6:8]),
-                )
-                self.day_number = len(self.data)
-                if self.data[len(self.data) - 1].get("breaks"):
-                    self.breaks = self.data[len(self.data) - 1]["breaks"]
-                end_time = self.data[len(self.data) - 1]["end_time"]
-                
-                dt_endtime = datetime.datetime(
-                    self.start_time.year,
-                    self.start_time.month,
-                    self.start_time.day,
-                    int(end_time[:2]) + hour_compensation,
-                    int(end_time[3:5]),
-                    int(end_time[6:8]),
-                )
-                
-                self.break_length_delt = datetime.datetime.now() - dt_endtime
-                self.break_length_str = strfdelta(datetime.datetime.now() - dt_endtime)
-                del self.data[len(self.data) - 1]
-        else: 
-            # Reset Timer To Not Include Time Spent In Menu 
-            self.start_time = datetime.datetime.now()
+        # temporarily removing break functionality for later modification
+
+        # if self.data[len(self.data) - 1]["date"] == self.start_time.strftime(
+        #     "%Y-%m-%d"
+        # ):
+        #     continue_response = None
+        #     while(not (continue_response in valid_continue_responses)):
+        #         continue_response = input(
+        #             "Would You Like To Continue Your Previous Session? [y/n]:  "
+        #         )
+        #     if continue_response.lower() in ["y", "yes", ""]:
+        #         self.curr_session_start_time = datetime.datetime.now() 
+        #         self.start_time_str = self.data[len(self.data) - 1]["start_time"]
+        #         hour_compensation = 0
+        #         if self.start_time_str[9:11] == "PM":
+        #             hour_compensation = 12
+        #         elif (
+        #             self.start_time_str[9:11] == "AM"
+        #             and self.start_time_str[0:2] == "12"
+        #         ):
+        #             hour_compensation = -12
+        #         self.start_time = datetime.datetime(
+        #             self.start_time.year,
+        #             self.start_time.month,
+        #             self.start_time.day,
+        #             int(self.start_time_str[:2]) + hour_compensation,
+        #             int(self.start_time_str[3:5]),
+        #             int(self.start_time_str[6:8]),
+        #         )
+        #         self.day_number = len(self.data)
+        #         if self.data[len(self.data) - 1].get("breaks"):
+        #             self.breaks = self.data[len(self.data) - 1]["breaks"]
+        #         end_time = self.data[len(self.data) - 1]["end_time"]
+        #         
+        #         dt_endtime = datetime.datetime(
+        #             self.start_time.year,
+        #             self.start_time.month,
+        #             self.start_time.day,
+        #             int(end_time[:2]) + hour_compensation,
+        #             int(end_time[3:5]),
+        #             int(end_time[6:8]),
+        #         )
+        #         
+        #         self.break_length_delt = datetime.datetime.now() - dt_endtime
+        #         self.break_length_str = strfdelta(datetime.datetime.now() - dt_endtime)
+        #         del self.data[len(self.data) - 1]
+        # else: 
+        #     # Reset Timer To Not Include Time Spent In Menu 
+        #     self.start_time = datetime.datetime.now()
 
         def display_session_progress():
             global INIT
