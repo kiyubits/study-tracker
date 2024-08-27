@@ -3,7 +3,6 @@ from shutil import which
 
 CLIPBOARD = ""
 
-
 def find_clipboard():
     """Uses loginctl to obtain the top most user's session number
     and finds the currently used protocol from it"""
@@ -40,10 +39,9 @@ def copy_to_clipboard(input: dict):
         break_strings = ''
     
     formatted_text = (f'Studying Physics Everyday Until I Graduate University | Day {input["day"]}\n'
-            f'Session started at: {input["start_time"]}\n'
-            f'Session ended at: {input["end_time"]}\n'
-            f'{break_strings}'
-            f'Session length: {input["session_length"]}\n')
+            f'Session started at: {input["sessions"]["start_time"]}\n'
+            f'Session ended at: {input["sessions"]["end_time"]}\n'
+            f'Session length: {input["sessions"]["session_length"]}')
             
     if CLIPBOARD == "wl-clipboard":
         subprocess.Popen(["wl-copy", formatted_text], stdout=subprocess.PIPE)
