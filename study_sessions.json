@@ -1186,5 +1186,21 @@
                 "session_length": "01:14:05"
             }
         ]
+    },
+    {
+        "day": 109,
+        "date": "2024-08-29",
+        "sessions": [
+            {
+                "start_time": "02:00:27 PM",
+                "end_time": "03:14:38 PM",
+                "session_length": "01:14:11"
+            },
+            {
+                "start_time": "09:11:15 PM",
+                "end_time": "11:30:36 PM",
+                "session_length": "02:19:20"
+            }
+        ]
     }
 ]
