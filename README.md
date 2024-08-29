@@ -50,4 +50,6 @@ press `enter` after entering a session to end it.
 
 json data is appended to `study_sessions.json` automatically. you may want to change the initial starting date to make the day number valid for when you started your grind :)
 
+as a minor note, if you skip a day, it'll still continue incrementing the days, but it will be shown in the data that you skipped a day, you'll have to be the judge on that one
+
 rn i think i could make the study session screen a bit cooler, maybe with cooler ascii art or smth animated? also i wanna flesh out the analyse data script to be more detailed, like most hours studied in a week, or day that i tend to study most, etc. but all of that's doable as long as the data exists in the first place
