@@ -1419,6 +1419,17 @@
     },
     {
         "day": 129,
+        "date": "2024-09-18",
+        "sessions": [
+            {
+                "start_time": "10:59:29 PM",
+                "end_time": "12:08:25 AM",
+                "session_length": "01:08:55"
+            }
+        ]
+    },
+    {
+        "day": 130,
         "date": "2024-09-19",
         "sessions": [
             {
@@ -1430,6 +1441,11 @@
                 "start_time": "03:24:55 PM",
                 "end_time": "04:17:36 PM",
                 "session_length": "00:52:41"
+            },
+            {
+                "start_time": "04:30:11 PM",
+                "end_time": "05:50:37 PM",
+                "session_length": "01:20:25"
             }
         ]
     }
