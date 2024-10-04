@@ -162,11 +162,11 @@ def processEnd(session: StudySession):
             "total_time": total_session_length,
         }
 
-        copy_to_clipboard(clipboard_data)
+        # copy_to_clipboard(clipboard_data)
 
 def main():
     session = StudySession("study_sessions.json")
-    find_clipboard()
+    # find_clipboard()
 
     # sent to program when terminal is closed
     def sig_hup_handler(sig, *_):
