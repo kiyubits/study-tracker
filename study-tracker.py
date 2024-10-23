@@ -91,8 +91,8 @@ class StudySession:
                 if n == 1:
                     print(
                         f"""
-     ╱|、
-    (˚ˎ 。7     Study session in progress... 
+    ╱|、
+   (˚ˎ 。7     Study session in progress... 
     |、˜〵     Elapsed time: {session_duration_str}
     じしˍ,)ノ
                             """
