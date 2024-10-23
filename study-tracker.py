@@ -91,19 +91,19 @@ class StudySession:
                 if n == 1:
                     print(
                         f"""
-         ╱|、
-        (˚ˎ 。7     Study session in progress... 
-         |、˜〵     Elapsed time: {session_duration_str}
-         じしˍ,)ノ
+     ╱|、
+    (˚ˎ 。7     Study session in progress... 
+    |、˜〵     Elapsed time: {session_duration_str}
+    じしˍ,)ノ
                             """
                     )
                 elif n == 2:
                     print(
                         f"""
-         ╱|、
-        (˚ˎ 。7     Session in progress... 
-         |、˜〵     Elapsed time: {session_duration_str}
-         じしˍ,)ノ  {sys.argv[1]}
+     ╱|、
+    (˚ˎ 。7     Session in progress... 
+     |、˜〵     Elapsed time: {session_duration_str}
+     じしˍ,)ノ  {sys.argv[1]}
                             """
                     )
 
