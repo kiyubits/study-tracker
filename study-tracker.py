@@ -86,14 +86,27 @@ class StudySession:
                 session_duration = current_time - calc_start_time
                 session_duration_str = strfdelta(session_duration)
 
-                print(
-                    f"""
-     ╱|、
-    (˚ˎ 。7     Session in progress... 
-     |、˜〵     Elapsed time: {session_duration_str}
-     じしˍ,)ノ
-                        """
-                )
+                n = len(sys.argv)
+
+                if n == 1:
+                    print(
+                        f"""
+         ╱|、
+        (˚ˎ 。7     Study session in progress... 
+         |、˜〵     Elapsed time: {session_duration_str}
+         じしˍ,)ノ
+                            """
+                    )
+                elif n == 2:
+                    print(
+                        f"""
+         ╱|、
+        (˚ˎ 。7     Session in progress... 
+         |、˜〵     Elapsed time: {session_duration_str}
+         じしˍ,)ノ  {sys.argv[1]}
+                            """
+                    )
+
                 time.sleep(1)
 
         self.progress_thread = threading.Thread(target=display_session_progress)
@@ -165,6 +178,14 @@ def processEnd(session: StudySession):
         copy_to_clipboard(clipboard_data)
 
 def main():
+
+    n = len(sys.argv)
+    print(n)
+
+    if n != 1 and n != 2:
+        print("Only give either 0 or 1 command line argument/s")
+        sys.exit(1)
+
     session = StudySession("study_sessions.json")
     find_clipboard()
 
