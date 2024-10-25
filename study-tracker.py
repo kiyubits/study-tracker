@@ -101,7 +101,7 @@ class StudySession:
                     print(
                         f"""
      ╱|、
-    (˚ˎ 。7     Session in progress... 
+    (˚ˎ 。7     Study session in progress... 
      |、˜〵     Elapsed time: {session_duration_str}
      じしˍ,)ノ  {sys.argv[1]}
                             """
