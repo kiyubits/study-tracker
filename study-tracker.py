@@ -86,6 +86,12 @@ class StudySession:
                 session_duration = current_time - calc_start_time
                 session_duration_str = strfdelta(session_duration)
 
+                # Calculate total time studied so far today
+                total_time_today = session_duration
+                for s in self.sessions:
+                    total_time_today += time_str_to_timedelta(s["session_length"])
+                total_time_today_str = strfdelta(total_time_today)
+
                 n = len(sys.argv)
 
                 if n == 1:
@@ -94,7 +100,7 @@ class StudySession:
     ╱|、
    (˚ˎ 。7     Study session in progress... 
     |、˜〵     Elapsed time: {session_duration_str}
-    じしˍ,)ノ
+    じしˍ,)ノ  Total time studied today: {total_time_today_str}
                             """
                     )
                 elif n == 2:
@@ -103,7 +109,9 @@ class StudySession:
      ╱|、
     (˚ˎ 。7     Study session in progress... 
      |、˜〵     Elapsed time: {session_duration_str}
-     じしˍ,)ノ  {sys.argv[1]}
+     じしˍ,)ノ  Total time studied today: {total_time_today_str} 
+
+     {sys.argv[1]}
                             """
                     )
 
