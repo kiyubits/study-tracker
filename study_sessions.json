@@ -1885,5 +1885,36 @@
                 "session_length": "00:19:28"
             }
         ]
+    },
+    {
+        "day": 168,
+        "date": "2024-10-27",
+        "sessions": [
+            {
+                "start_time": "09:59:31 AM",
+                "end_time": "10:51:08 AM",
+                "session_length": "00:51:36"
+            },
+            {
+                "start_time": "11:13:01 AM",
+                "end_time": "12:46:14 PM",
+                "session_length": "01:33:13"
+            },
+            {
+                "start_time": "01:19:50 PM",
+                "end_time": "04:38:28 PM",
+                "session_length": "03:18:37"
+            },
+            {
+                "start_time": "04:44:04 PM",
+                "end_time": "06:17:08 PM",
+                "session_length": "01:33:04"
+            },
+            {
+                "start_time": "06:30:51 PM",
+                "end_time": "06:49:51 PM",
+                "session_length": "00:19:00"
+            }
+        ]
     }
 ]
