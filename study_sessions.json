@@ -1970,5 +1970,16 @@
                 "session_length": "00:53:38"
             }
         ]
+    },
+    {
+        "day": 173,
+        "date": "2024-11-01",
+        "sessions": [
+            {
+                "start_time": "10:14:18 PM",
+                "end_time": "10:47:03 PM",
+                "session_length": "00:32:44"
+            }
+        ]
     }
 ]
