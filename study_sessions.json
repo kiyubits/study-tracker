@@ -1981,5 +1981,16 @@
                 "session_length": "00:32:44"
             }
         ]
+    },
+    {
+        "day": 174,
+        "date": "2024-11-02",
+        "sessions": [
+            {
+                "start_time": "03:40:13 PM",
+                "end_time": "06:37:49 PM",
+                "session_length": "02:57:36"
+            }
+        ]
     }
 ]
