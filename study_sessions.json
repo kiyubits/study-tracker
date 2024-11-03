@@ -1992,5 +1992,21 @@
                 "session_length": "02:57:36"
             }
         ]
+    },
+    {
+        "day": 175,
+        "date": "2024-11-03",
+        "sessions": [
+            {
+                "start_time": "02:37:51 PM",
+                "end_time": "03:42:35 PM",
+                "session_length": "01:04:44"
+            },
+            {
+                "start_time": "05:09:47 PM",
+                "end_time": "06:06:26 PM",
+                "session_length": "00:56:39"
+            }
+        ]
     }
 ]
