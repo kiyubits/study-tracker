@@ -2102,6 +2102,11 @@
                 "start_time": "06:20:30 PM",
                 "end_time": "07:03:57 PM",
                 "session_length": "00:43:26"
+            },
+            {
+                "start_time": "10:45:27 PM",
+                "end_time": "11:45:28 PM",
+                "session_length": "01:00:00"
             }
         ]
     }
