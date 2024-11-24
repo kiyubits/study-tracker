@@ -2323,5 +2323,21 @@
                 "session_length": "00:50:24"
             }
         ]
+    },
+    {
+        "day": 196,
+        "date": "2024-11-24",
+        "sessions": [
+            {
+                "start_time": "06:17:07 PM",
+                "end_time": "07:37:31 PM",
+                "session_length": "01:20:24"
+            },
+            {
+                "start_time": "08:47:38 PM",
+                "end_time": "09:28:48 PM",
+                "session_length": "00:41:09"
+            }
+        ]
     }
 ]
