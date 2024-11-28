@@ -29,7 +29,6 @@ def find_clipboard():
     else:
         CLIPBOARD = "xclip"
 
-
 def copy_to_clipboard(input: dict):
     """Formats and copies to the first found clipboard."""
 #     if('breaks' in input.keys()): 
@@ -44,6 +43,31 @@ def copy_to_clipboard(input: dict):
         formatted_text += f"Session {i}: {session["start_time"]} - {session["end_time"]} ({session["session_length"]})\n"
 
     formatted_text += f"Total time spent studying today: {input["total_time"]}"
+
+    if CLIPBOARD == "wl-clipboard":
+        subprocess.Popen(["wl-copy", formatted_text], stdout=subprocess.PIPE)
+    elif CLIPBOARD == "xclip":
+        proc = subprocess.Popen(["xclip", "-sel", "clip"], stdin=subprocess.PIPE)
+        proc.communicate(input=bytes(formatted_text, "utf-8"))
+    else:
+        proc = subprocess.Popen(["xsel", "-b"], stdin=subprocess.PIPE)
+        proc.communicate(input=bytes(formatted_text, "utf-8"))
+
+# THIS IS FOR THE CODING SESSIONS
+def copy_to_clipboard_coding_sessions(input: dict):
+    """Formats and copies to the first found clipboard."""
+#     if('breaks' in input.keys()): 
+#         breaks_list = [f'{key}: {value}\n' for key, value in input["breaks"].items()]
+#         break_strings = ''.join(str(string) for string in breaks_list)
+#     else:
+#         break_strings = ''
+    
+    formatted_text = f"Coding Everyday Until I Get An Internship | Day {input["day"]}\n"
+
+    for i, session in enumerate(input["sessions"], start = 1):
+        formatted_text += f"Session {i}: {session["start_time"]} - {session["end_time"]} ({session["session_length"]})\n"
+
+    formatted_text += f"Total time spent coding today: {input["total_time"]}"
 
     if CLIPBOARD == "wl-clipboard":
         subprocess.Popen(["wl-copy", formatted_text], stdout=subprocess.PIPE)

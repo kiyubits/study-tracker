@@ -1,0 +1,13 @@
+[
+    {
+        "day": 1,
+        "date": "2024-11-28",
+        "sessions": [
+            {
+                "start_time": "10:31:51 PM",
+                "end_time": "10:54:24 PM",
+                "session_length": "00:22:32"
+            }
+        ]
+    }
+]
