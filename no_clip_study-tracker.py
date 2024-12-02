@@ -65,7 +65,7 @@ class StudySession:
         if len(self.data) != 0:
             if self.data[len(self.data) - 1]["date"] == self.start_time.strftime("%Y-%m-%d"):
                 self.multiple_sessions = True
-                self.sessions = self.data[len(self.data) - 1]["sessions"]
+                self.sessions = self.data[len(self.data) - 1]['sessions']
                 self.day_number = len(self.data)
                 self.start_time = datetime.datetime.now()
 
@@ -147,7 +147,7 @@ def processEnd(session: StudySession):
         total_session_length = datetime.timedelta()
 
         for i, s in enumerate(sessions, start = 1):
-            print(f"Session {i}: {s["start_time"]} - {s["end_time"]} ({s["session_length"]})")
+            print(f"Session {i}: {s['start_time']} - {s['end_time']} ({s['session_length']})")
             total_session_length += time_str_to_timedelta(s["session_length"])
 
         print(f"Total time spent studying today: {total_session_length}\n")

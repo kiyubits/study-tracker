@@ -168,8 +168,8 @@ def processEnd(session: StudySession):
         total_session_length = datetime.timedelta()
 
         for i, s in enumerate(sessions, start = 1):
-            print(f"Session {i}: {s["start_time"]} - {s["end_time"]} ({s["session_length"]})")
-            total_session_length += time_str_to_timedelta(s["session_length"])
+            print(f"Session {i}: {s['start_time']} - {s['end_time']} ({s['session_length']})")
+            total_session_length += time_str_to_timedelta(s['session_length'])
 
         print(f"Total time spent studying today: {total_session_length}\n")
             

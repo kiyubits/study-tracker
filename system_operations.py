@@ -37,12 +37,12 @@ def copy_to_clipboard(input: dict):
 #     else:
 #         break_strings = ''
     
-    formatted_text = f"Studying Physics Everyday Until I Graduate University | Day {input["day"]}\n"
+    formatted_text = f"Studying Physics Everyday Until I Graduate University | Day {input['day']}\n"
 
     for i, session in enumerate(input["sessions"], start = 1):
-        formatted_text += f"Session {i}: {session["start_time"]} - {session["end_time"]} ({session["session_length"]})\n"
+        formatted_text += f"Session {i}: {session['start_time']} - {session['end_time']} ({session['session_length']})\n"
 
-    formatted_text += f"Total time spent studying today: {input["total_time"]}"
+    formatted_text += f"Total time spent studying today: {input['total_time']}"
 
     if CLIPBOARD == "wl-clipboard":
         subprocess.Popen(["wl-copy", formatted_text], stdout=subprocess.PIPE)
@@ -62,12 +62,12 @@ def copy_to_clipboard_coding_sessions(input: dict):
 #     else:
 #         break_strings = ''
     
-    formatted_text = f"Programming Everyday Until I Get An Internship | Day {input["day"]}\n"
+    formatted_text = f"Programming Everyday Until I Get An Internship | Day {input['day']}\n"
 
     for i, session in enumerate(input["sessions"], start = 1):
-        formatted_text += f"Session {i}: {session["start_time"]} - {session["end_time"]} ({session["session_length"]})\n"
+        formatted_text += f"Session {i}: {session['start_time']} - {session['end_time']} ({session['session_length']})\n"
 
-    formatted_text += f"Total time spent coding today: {input["total_time"]}"
+    formatted_text += f"Total time spent coding today: {input['total_time']}"
 
     if CLIPBOARD == "wl-clipboard":
         subprocess.Popen(["wl-copy", formatted_text], stdout=subprocess.PIPE)
