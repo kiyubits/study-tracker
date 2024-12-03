@@ -62,6 +62,16 @@
                 "start_time": "03:20:47 PM",
                 "end_time": "04:50:08 PM",
                 "session_length": "01:29:21"
+            },
+            {
+                "start_time": "05:01:01 PM",
+                "end_time": "05:47:37 PM",
+                "session_length": "00:46:35"
+            },
+            {
+                "start_time": "05:58:51 PM",
+                "end_time": "06:12:51 PM",
+                "session_length": "00:13:59"
             }
         ]
     }
