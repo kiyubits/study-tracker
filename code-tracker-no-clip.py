@@ -98,7 +98,7 @@ class StudySession:
                     print(
                         f"""
     ╱|、
-   (˚ˎ 。7     Coding session in progress... 
+   (˚ˎ 。7     Programming session in progress... 
     |、˜〵     Elapsed time: {session_duration_str}
     じしˍ,)ノ  Total time coded today: {total_time_today_str}
                             """
@@ -107,7 +107,7 @@ class StudySession:
                     print(
                         f"""
      ╱|、
-    (˚ˎ 。7     Coding session in progress... 
+    (˚ˎ 。7     Programming session in progress... 
      |、˜〵     Elapsed time: {session_duration_str}
      じしˍ,)ノ  Total time coded today: {total_time_today_str} 
 
@@ -163,7 +163,7 @@ def processEnd(session: StudySession):
     sessions = session.data[len(session.data) - 1]["sessions"]
 
     if TERM_OPEN:
-        print(f"Programming Everyday Until I Get An Internship | Day {session.day_number}\n")
+        print(f"Programming Until I Get An Internship | Day {session.day_number}\n")
        
         total_session_length = datetime.timedelta()
 

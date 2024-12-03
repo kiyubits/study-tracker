@@ -2381,11 +2381,6 @@
                 "start_time": "09:43:56 PM",
                 "end_time": "10:27:25 PM",
                 "session_length": "00:43:28"
-            },
-            {
-                "start_time": "10:31:51 PM",
-                "end_time": "10:54:24 PM",
-                "session_length": "00:22:32"
             }
         ]
     },
@@ -2397,11 +2392,6 @@
                 "start_time": "05:12:18 PM",
                 "end_time": "06:00:52 PM",
                 "session_length": "00:48:34"
-            },
-            {
-                "start_time": "04:32:35 PM",
-                "end_time": "05:04:56 PM",
-                "session_length": "00:32:21"
             }
         ]
     },
@@ -2413,11 +2403,6 @@
                 "start_time": "09:37:27 PM",
                 "end_time": "10:01:51 PM",
                 "session_length": "00:24:24"
-            },
-            {
-                "start_time": "01:23:24 PM",
-                "end_time": "01:55:31 PM",
-                "session_length": "00:32:06"
             }
         ]
     },
@@ -2429,11 +2414,6 @@
                 "start_time": "07:04:00 PM",
                 "end_time": "07:34:17 PM",
                 "session_length": "00:30:17"
-            },
-            {
-                "start_time": "07:58:01 PM",
-                "end_time": "08:16:27 PM",
-                "session_length": "00:18:26"
             }
         ]
     },
@@ -2445,11 +2425,6 @@
                 "start_time": "03:41:27 PM",
                 "end_time": "04:05:13 PM",
                 "session_length": "00:23:46"
-            },
-            {
-                "start_time": "04:18:09 PM",
-                "end_time": "05:44:49 PM",
-                "session_length": "01:26:40"
             }
         ]
     }
