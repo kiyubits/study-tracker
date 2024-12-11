@@ -2482,5 +2482,38 @@
                 "session_length": "00:30:40"
             }
         ]
+    },
+    {
+        "day": 210,
+        "date": "2024-12-08",
+        "sessions": [
+            {
+                "start_time": "09:37:20 PM",
+                "end_time": "09:56:40 PM",
+                "session_length": "00:19:20"
+            }
+        ]
+    },
+    {
+        "day": 211,
+        "date": "2024-12-09",
+        "sessions": [
+            {
+                "start_time": "11:12:37 PM",
+                "end_time": "11:42:38 PM",
+                "session_length": "00:30:01"
+            }
+        ]
+    },
+    {
+        "day": 212,
+        "date": "2024-12-10",
+        "sessions": [
+            {
+                "start_time": "11:49:34 PM",
+                "end_time": "12:29:01 AM",
+                "session_length": "00:39:26"
+            }
+        ]
     }
 ]
