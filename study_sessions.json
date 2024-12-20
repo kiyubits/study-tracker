@@ -2614,5 +2614,16 @@
                 "session_length": "00:18:04"
             }
         ]
+    },
+    {
+        "day": 222,
+        "date": "2024-12-20",
+        "sessions": [
+            {
+                "start_time": "11:26:28 AM",
+                "end_time": "11:56:57 AM",
+                "session_length": "00:30:29"
+            }
+        ]
     }
 ]
