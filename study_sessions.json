@@ -2768,5 +2768,16 @@
                 "session_length": "00:22:29"
             }
         ]
+    },
+    {
+        "day": 236,
+        "date": "2025-01-03",
+        "sessions": [
+            {
+                "start_time": "11:55:27 PM",
+                "end_time": "12:34:46 AM",
+                "session_length": "00:39:19"
+            }
+        ]
     }
 ]
