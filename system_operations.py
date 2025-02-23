@@ -1,7 +1,11 @@
 import subprocess
 from shutil import which
+import os
 
 CLIPBOARD = ""
+
+# if os.name == 'nt':
+#    CLIPBOARD = "clip"
 
 def find_clipboard():
     """Uses loginctl to obtain the top most user's session number
@@ -38,12 +42,12 @@ def copy_to_clipboard(input: dict):
 #     else:
 #         break_strings = ''
     
-    formatted_text = f"Studying Physics Everyday Until I Graduate University | Day {input["day"]}\n"
+    formatted_text = f"Studying Physics Everyday Until I Graduate University | Day {input['day']}\n"
 
     for i, session in enumerate(input["sessions"], start = 1):
-        formatted_text += f"Session {i}: {session["start_time"]} - {session["end_time"]} ({session["session_length"]})\n"
+        formatted_text += f"Session {i}: {session['start_time']} - {session['end_time']} ({session['session_length']})\n"
 
-    formatted_text += f"Total time spent studying today: {input["total_time"]}"
+    formatted_text += f"Total time spent studying today: {input['total_time']}"
 
     if CLIPBOARD == "wl-clipboard":
         subprocess.Popen(["wl-copy", formatted_text], stdout=subprocess.PIPE)
