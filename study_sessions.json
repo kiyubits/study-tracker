@@ -1,0 +1,48 @@
+[
+    {
+        "day": 1,
+        "date": "2025-02-24",
+        "sessions": [
+            {
+                "start_time": "10:05:43 PM",
+                "end_time": "10:05:46 PM",
+                "session_length": "00:00:03"
+            },
+            {
+                "start_time": "10:07:03 PM",
+                "end_time": "10:07:06 PM",
+                "session_length": "00:00:03"
+            },
+            {
+                "start_time": "10:17:12 PM",
+                "end_time": "10:17:14 PM",
+                "session_length": "00:00:02"
+            },
+            {
+                "start_time": "10:35:01 PM",
+                "end_time": "10:35:06 PM",
+                "session_length": "00:00:04"
+            },
+            {
+                "start_time": "10:35:35 PM",
+                "end_time": "10:35:36 PM",
+                "session_length": "00:00:01"
+            },
+            {
+                "start_time": "10:37:19 PM",
+                "end_time": "10:37:21 PM",
+                "session_length": "00:00:02"
+            },
+            {
+                "start_time": "10:39:04 PM",
+                "end_time": "10:39:09 PM",
+                "session_length": "00:00:05"
+            },
+            {
+                "start_time": "10:40:41 PM",
+                "end_time": "10:40:43 PM",
+                "session_length": "00:00:02"
+            }
+        ]
+    }
+]
