@@ -8,9 +8,10 @@ import sys
 import threading
 import time
 
-from greeter import greeter
+from greeter import greeter, getKey
 from system_operations import copy_to_clipboard, find_clipboard
 from utils import strfdelta, time_str_to_timedelta
+
 
 affirmations = [
     "You did really well today!",
@@ -52,7 +53,12 @@ class StudySession:
 
 
     ret = greeter()
+    # if ret == -1 not a valid input 
+    while (ret <= 0):
+        ret = greeter()
+
     if ret == 1:
+        # continue session
 
         def calculate_session_length(self, start, end):
             session_length = end - start
@@ -110,9 +116,15 @@ class StudySession:
             self.progress_thread.join()
             processEnd(self)
 
-            key = greeter.get_key()
+            key = getKey()
             if key == "q": 
                 processEnd(self)
+
+    elif ret == 2:
+        # start new session
+        print("call new session function")
+    elif ret == 3:
+        print("call exit function")
 
 def processEnd(session: StudySession):
     # Ensure that prompting has completed before sessions file

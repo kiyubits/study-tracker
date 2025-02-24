@@ -37,6 +37,7 @@ def greeter():
 
     print("[c] continue session ")
     print("[s] start new session")
+    print("[e] exit")
 
     print("choose an option... ", end="", flush=True)
     key = getKey()
@@ -48,6 +49,9 @@ def greeter():
     elif key == "s":
         print("Starting a new session... 📖\n")
         return 2
-    elif key == "": 
-        print("\n")
+    elif key == "e":
+        print("Exiting... 👋") 
         return 3
+    else:
+        print("Invalid choice! ❌")
+        return -1
