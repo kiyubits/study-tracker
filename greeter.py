@@ -86,7 +86,7 @@ def greeter():
     # checking with width + 5 for a buffer (if this doesnt make sense take out)
     if terminal_width <= (ascii_width_smaller + 5):
         print(smallGreetScreen)
-    elif terminal_width <= (+ 5):
+    elif terminal_width <= (ascii_width_normal + 5):
         print(smallerGreetScreen)
     else:
         print(normalGreetScreen)
