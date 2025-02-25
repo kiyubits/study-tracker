@@ -103,7 +103,7 @@ class StudySession:
         (˚ˎ 。7     Session in progress... 
          |、˜〵     Elapsed time: {session_duration_str}
          じしˍ,)ノ
-                    Press [q] to quit.
+                    [Return] -> quit
                             """
                     )
                     time.sleep(1)

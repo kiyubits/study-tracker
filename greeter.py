@@ -4,6 +4,10 @@
 
 import sys
 
+"""
+this function gets a key press from the user, and not showing it on the screen
+other then input.
+"""
 def getKey():
     if sys.platform == "win32":
         import msvcrt
