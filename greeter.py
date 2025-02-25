@@ -24,6 +24,21 @@ def getKey():
             termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)  # Restore settings
         return ch
 
+
+def clear():
+    import shutil
+    # Get terminal size
+    size = shutil.get_terminal_size()
+
+    # Print enough newlines to clear the screen
+    sys.stderr.write("\n" * size.lines)
+
+    # Move cursor to the top-left corner
+    sys.stderr.write("\033[0;0H")
+
+    sys.stderr.flush()
+
+
 def greeter():
     print(
 """
