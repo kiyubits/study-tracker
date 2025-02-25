@@ -3,6 +3,7 @@
 # give option to set new goal
 
 import sys
+import shutil
 
 """
 this function gets a key press from the user, and not showing it on the screen
@@ -26,7 +27,6 @@ def getKey():
 
 
 def clear():
-    import shutil
     # Get terminal size
     size = shutil.get_terminal_size()
 
@@ -40,8 +40,7 @@ def clear():
 
 
 def greeter():
-    print(
-"""
+    normalGreetScreen = """
 \t┌──────────────────────────────────────────────────────────────────┐
 \t│   ___ _____ _   _ _____   __  _____ ___    _   ___ _  _____ ___  │
 \t│  / __|_   _| | | |   \\ \\ / / |_   _| _ \\  /_\\ / __| |/ / __| _ \\ │
@@ -52,7 +51,32 @@ def greeter():
 
 \t \tTrack Your Studies, Track Your Success! 📖⏳
 """
-    )
+
+    smallerGreetScreen = """
+┌────────────────────────────────────────────┐
+│ ____ _____ _   _ ______   __               │
+│/ ___|_   _| | | |  _ \\ \\ / /               │
+│\\___ \\ | | | | | | | | \\ V /                │
+│ ___) || | | |_| | |_| || |                 │
+│|____/ |_|_ \\___/|____/_|_|_  _______ ____  │
+│|_   _|  _ \\    / \\  / ___| |/ / ____|  _ \\ │
+│  | | | |_) |  / _ \\| |   | ' /|  _| | |_) |│
+│  | | |  _ <  / ___ \\ |___| . \\| |___|  _ < │
+│  |_| |_| \\_\\/_/   \\_\\____|_|\\_\\_____|_| \\_\\│
+└────────────────────────────────────────────┘
+    Your Studies, Track Your Success! 📖⏳
+"""
+
+
+    # gets the width of the ascii art
+    ascii_width = max(len(line) for line in normalGreetScreen.splitlines())
+    # gets the width of the terminal
+    terminal_width = shutil.get_terminal_size().columns
+
+    if terminal_width < ascii_width:
+        print(smallerGreetScreen)
+    else:
+        print(normalGreetScreen)
 
     print("[c] continue session ")
     print("[s] start new session")

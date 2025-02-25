@@ -53,12 +53,14 @@ class StudySession:
 
 
     def run_session(self):
-        ret = greeter()
+        clear()
         # if ret == -1 not a valid input 
-        while (ret <= 0):
+        while True:
             ret = greeter()
             time.sleep(1)
             clear()
+            if (ret > 0):
+                break
 
         if ret == 1:
             self.track_study_session()
@@ -66,7 +68,6 @@ class StudySession:
             # start new session
             print("call new session function")
         elif ret == 3:
-            print("call exit function")
             processEnd(self)
 
     def calculate_session_length(self, start, end):
