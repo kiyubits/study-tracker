@@ -9,6 +9,7 @@ import threading
 import time
 
 from greeter import *
+from color_output import *
 from system_operations import copy_to_clipboard, find_clipboard
 from utils import strfdelta, time_str_to_timedelta
 
@@ -50,7 +51,6 @@ class StudySession:
         self.curr_session_start_time = None
         self.multiple_sessions = False
         self.sessions = []
-
 
     def run_session(self):
         clear()
@@ -107,7 +107,7 @@ class StudySession:
                         session_duration = current_time - calc_start_time
                         session_duration_str = strfdelta(session_duration)
 
-                        print(
+                        print(colored_output(
                             f"""
              ╱|、
             (˚ˎ 。7     Session in progress... 
@@ -115,7 +115,7 @@ class StudySession:
              じしˍ,)ノ
                         [Return] -> quit
                                 """
-                        )
+                        ))
                         time.sleep(1)
 
                 self.progress_thread = threading.Thread(target=display_session_progress)

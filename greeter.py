@@ -9,7 +9,7 @@ import shutil
 this function gets a key press from the user, and not showing it on the screen
 other then input.
 """
-def getKey():
+def get_key():
     if sys.platform == "win32":
         import msvcrt
         return msvcrt.getch().decode()  # Windows single key press
@@ -97,7 +97,7 @@ def greeter():
     print("[e] exit")
 
     print("choose an option... ", end="", flush=True)
-    key = getKey()
+    key = get_key()
     print("\n")
 
     if key == "c":
