@@ -8,8 +8,11 @@ import sys
 import threading
 import time
 
+from greeter import *
+from color_output import *
 from system_operations import copy_to_clipboard, find_clipboard
 from utils import strfdelta, time_str_to_timedelta
+
 
 affirmations = [
     "You did really well today!",
@@ -49,60 +52,80 @@ class StudySession:
         self.multiple_sessions = False
         self.sessions = []
 
+    def run_session(self):
+        clear()
+        # if ret == -1 not a valid input 
+        while True:
+            ret = greeter()
+            time.sleep(0.3)
+            clear()
+            if (ret > 0):
+                break
+
+        if ret == 1:
+            self.track_study_session()
+        elif ret == 2:
+            # start new session
+            print("")
+        elif ret == 3:
+            processEnd(self)
+
     def calculate_session_length(self, start, end):
-        session_length = end - start
-        return session_length
+                session_length = end - start
+                return session_length
 
     def track_study_session(self):
-        if os.path.exists(self.filename):
-            with open(self.filename, "r") as file:
-                self.data = json.load(file)
+                if os.path.exists(self.filename):
+                    with open(self.filename, "r") as file:
+                        self.data = json.load(file)
 
-        self.start_time = datetime.datetime.now()
-        self.day_number = len(self.data) + 1
-        self.start_time_str = self.start_time.strftime("%I:%M:%S %p")
-
-        if len(self.data) != 0:
-            if self.data[len(self.data) - 1]["date"] == self.start_time.strftime("%Y-%m-%d"):
-                self.multiple_sessions = True
-                self.sessions = self.data[len(self.data) - 1]["sessions"]
-                self.day_number = len(self.data)
                 self.start_time = datetime.datetime.now()
+                self.day_number = len(self.data) + 1
+                self.start_time_str = self.start_time.strftime("%I:%M:%S %p")
 
-        def display_session_progress():
-            global INIT
-            INIT = True
-            if (self.curr_session_start_time): 
-                calc_start_time = self.curr_session_start_time
-            else: 
-                calc_start_time = self.start_time
+                if len(self.data) != 0:
+                    if self.data[len(self.data) - 1]["date"] == self.start_time.strftime("%Y-%m-%d"):
+                        self.multiple_sessions = True
+                        self.sessions = self.data[len(self.data) - 1]["sessions"]
+                        self.day_number = len(self.data)
+                        self.start_time = datetime.datetime.now()
 
-            while not self.halt:
-                # Clear the screen
-                os.system("clear")
+                def display_session_progress():
+                    global INIT
+                    INIT = True
+                    if (self.curr_session_start_time): 
+                        calc_start_time = self.curr_session_start_time
+                    else: 
+                        calc_start_time = self.start_time
 
-                # Calculate the current session duration
-                current_time = datetime.datetime.now()
-                session_duration = current_time - calc_start_time
-                session_duration_str = strfdelta(session_duration)
+                    while not self.halt:
+                        # Clear the screen
+                        os.system("clear")
 
-                print(
-                    f"""
-     ╱|、
-    (˚ˎ 。7     Session in progress... 
-     |、˜〵     Elapsed time: {session_duration_str}
-     じしˍ,)ノ
-                        """
-                )
-                time.sleep(1)
+                        # Calculate the current session duration
+                        current_time = datetime.datetime.now()
+                        session_duration = current_time - calc_start_time
+                        session_duration_str = strfdelta(session_duration)
 
-        self.progress_thread = threading.Thread(target=display_session_progress)
-        self.progress_thread.start()
+                        print(colored_output(
+                            f"""
+             ╱|、
+            (˚ˎ 。7     Session in progress... 
+             |、˜〵     Elapsed time: {session_duration_str}
+             じしˍ,)ノ
+                        [Return] -> quit
+                                """
+                        ))
+                        time.sleep(1)
 
-        input()
-        self.halt = True
-        self.progress_thread.join()
-        processEnd(self)
+                self.progress_thread = threading.Thread(target=display_session_progress)
+                self.progress_thread.start()
+
+                input()
+                self.halt = True
+                self.progress_thread.join()
+                processEnd(self)
+
 
 def processEnd(session: StudySession):
     # Ensure that prompting has completed before sessions file
@@ -185,7 +208,7 @@ def main():
 
     signal.signal(signal.SIGHUP, sig_hup_handler)
     signal.signal(signal.SIGINT, sig_int_handler)
-    session.track_study_session()
+    session.run_session()
 
 if __name__ == "__main__":
     main()

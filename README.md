@@ -8,7 +8,6 @@
 you keep track of your studying progress. 
 
 # ⚙️ Requirements
-
 - Python 3+
 - One of the following clipboards (to use clipboard functionality)
     - Wayland
