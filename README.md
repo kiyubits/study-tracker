@@ -1,30 +1,43 @@
-a simple study tracker in python that makes the terminal show a screen to indicate a session is in progress.
+<h1>
+    <p align="center">
+        📖 Study Tracker
+    </p>
+</h1>
 
-# Future Improvements
+***"Study Tracker"*** is a simple study tracker cli built in Python to help 
+you keep track of your studying progress. 
 
-- make the data analysis method include more stuff
-  - allow for graphs? it would be kinda cool to with with math/statistics packages
-- polybar module?
-
-# Requirements
-- python 3+
-- One of the following clipboards in order to use the session copy feature: 
+# ⚙️ Requirements
+- Python 3+
+- One of the following clipboards (to use clipboard functionality)
     - Wayland
         - wl-clipboard
     - X11
-        - xsel 
+        - xsel
         - xclip
 
-# How To Run
+# 🚀 How To Run
 
-you just need to run it like any python file, and i don't think extra packages are needed
+Since this is basically a python script you just need to execute
+```sh
+python3 study-tracker.py # (or equivalent)
+```
+If you want to exit a session you press ```Enter```.
 
-```python3 study-tracker.py``` (or equivalent)
+After you finish the session, the data is appended to study_session.json automatically.
 
-press `enter` after entering a session to end it.
+> [!NOTE]
+> You can do multiple sessions in one day. However, if you do another session past midnight, it rolls over to the next day. 
 
-json data is appended to `study_sessions.json` automatically. you may want to change the initial starting date to make the day number valid for when you started your grind :)
+# 🎯 Future Improvements 
 
-as a minor note, if you skip a day, it'll still continue incrementing the days, but it will be shown in the data that you skipped a day, you'll have to be the judge on that one
+- make the data analysis method include more cool stuff [Add more data analysis features #3](https://www.github.com/kiyubits/study-tracker/issues/3).
+    - allow for graphs? it would be kinda cool to do with math/statistics packages.
+- make a polybar module? [Status Bar Module #2](https://www.github.com/kiyubits/study-tracker/issues/2).
+- Fix Windows clipboard compatibility [Can't Run on Windows #23](https://www.github.com/kiyubits/study-tracker/issues/23).
+- Fix the Mac idle mode bug [Mac Idle Mode #21](https://www.github.com/kiyubits/study-tracker/issues/21).
+- Fix "loginctl" issue for Mac (clipboard) [Can't run on mac because of loginctl #20](https://www.github.com/kiyubits/study-tracker/issues/20).
+... 
 
-rn i think i could make the study session screen a bit cooler, maybe with cooler ascii art or smth animated? also i wanna flesh out the analyse data script to be more detailed, like most hours studied in a week, or day that i tend to study most, etc. but all of that's doable as long as the data exists in the first place
+## License
+This project uses the XYZ-License it can be found in the LICENSE file.
