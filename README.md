@@ -4,7 +4,7 @@
     </p>
 </h1>
 
-***"Study Tracker"*** is a simple study tracker cli built in python. To help 
+***"Study Tracker"*** is a simple study tracker cli built in Python to help 
 you keep track of your studying progress. 
 
 # ⚙️ Requirements
@@ -26,12 +26,9 @@ python3 study-tracker.py # (or equivalent)
 If you want to exit a session you press ```Enter```.
 
 After you finish the session, the data is appended to study_session.json automatically.
-You may want to change the inital starting date to ake the day number valid for when 
-you started your grind 😃.
 
 > [!NOTE]
-> If you skip a day, the program will still continue incrementing the days,
-> but it will be shown in the data that you skipped a day, you'll have to be the judge on that one.
+> You can do multiple sessions in one day. However, if you do another session past midnight, it rolls over to the next day. 
 
 # 🎯 Future Improvements 
 
@@ -43,5 +40,5 @@ you started your grind 😃.
 - Fix "loginctl" issue for Mac (clipboard) [Can't run on mac because of loginctl #20](https://www.github.com/kiyubits/study-tracker/issues/20).
 ... 
 
-## Lincense
-This project uses the XYZ-License it can be found in the LINCESE file.
+## License
+This project uses the XYZ-License it can be found in the LICENSE file.
