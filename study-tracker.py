@@ -66,7 +66,7 @@ class StudySession:
             self.track_study_session()
         elif ret == 2:
             # start new session
-            print("call new session function")
+            print("")
         elif ret == 3:
             processEnd(self)
 
