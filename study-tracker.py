@@ -57,7 +57,7 @@ class StudySession:
         # if ret == -1 not a valid input 
         while True:
             ret = greeter()
-            time.sleep(1)
+            time.sleep(0.3)
             clear()
             if (ret > 0):
                 break
