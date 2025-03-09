@@ -3553,5 +3553,36 @@
                 "session_length": "00:16:39"
             }
         ]
+    },
+    {
+        "day": 301,
+        "date": "2025-03-09",
+        "sessions": [
+            {
+                "start_time": "02:10:35 PM",
+                "end_time": "03:03:15 PM",
+                "session_length": "00:52:40"
+            },
+            {
+                "start_time": "03:13:31 PM",
+                "end_time": "03:57:45 PM",
+                "session_length": "00:44:13"
+            },
+            {
+                "start_time": "04:42:17 PM",
+                "end_time": "05:36:35 PM",
+                "session_length": "00:54:18"
+            },
+            {
+                "start_time": "06:34:43 PM",
+                "end_time": "07:40:09 PM",
+                "session_length": "01:05:26"
+            },
+            {
+                "start_time": "09:50:01 PM",
+                "end_time": "10:32:54 PM",
+                "session_length": "00:42:52"
+            }
+        ]
     }
 ]
