@@ -3863,5 +3863,21 @@
                 "session_length": "01:18:04"
             }
         ]
+    },
+    {
+        "day": 326,
+        "date": "2025-04-03",
+        "sessions": [
+            {
+                "start_time": "01:43:39 PM",
+                "end_time": "02:30:44 PM",
+                "session_length": "00:47:05"
+            },
+            {
+                "start_time": "02:52:09 PM",
+                "end_time": "03:30:32 PM",
+                "session_length": "00:38:22"
+            }
+        ]
     }
 ]
