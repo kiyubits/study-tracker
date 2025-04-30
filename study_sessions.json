@@ -4190,5 +4190,16 @@
                 "session_length": "03:05:27"
             }
         ]
+    },
+    {
+        "day": 353,
+        "date": "2025-04-30",
+        "sessions": [
+            {
+                "start_time": "11:33:01 PM",
+                "end_time": "11:53:19 PM",
+                "session_length": "00:20:17"
+            }
+        ]
     }
 ]
