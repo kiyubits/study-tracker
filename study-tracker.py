@@ -163,7 +163,7 @@ def processEnd(session: StudySession):
     sessions = session.data[len(session.data) - 1]["sessions"]
 
     if TERM_OPEN:
-        print(f"Studying Physics Everyday Until I Graduate University | Day {session.day_number}\n")
+        print(f"Studying Everyday Until I Graduate University | Day {session.day_number}\n")
        
         total_session_length = datetime.timedelta()
 
