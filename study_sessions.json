@@ -4781,5 +4781,21 @@
                 "session_length": "01:50:28"
             }
         ]
+    },
+    {
+        "day": 404,
+        "date": "2025-06-20",
+        "sessions": [
+            {
+                "start_time": "05:22:16 PM",
+                "end_time": "06:08:59 PM",
+                "session_length": "00:46:43"
+            },
+            {
+                "start_time": "11:06:10 PM",
+                "end_time": "11:40:14 PM",
+                "session_length": "00:34:04"
+            }
+        ]
     }
 ]
