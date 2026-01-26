@@ -37,12 +37,16 @@ def copy_to_clipboard(input: dict):
 #     else:
 #         break_strings = ''
     
-    formatted_text = f"Studying Everyday Until I Graduate University | Day {input['day']}\n"
+    # Plain-text day summary with optional per-session notes
+    formatted_text = f"## Day {input['day']}\n\n"
 
-    for i, session in enumerate(input["sessions"], start = 1):
-        formatted_text += f"Session {i}: {session['start_time']} - {session['end_time']} ({session['session_length']})\n"
+    for session in input.get("sessions", []):
+        formatted_text += f"`{session['start_time']} - {session['end_time']} ({session['session_length']})` ~ "
+        note = session.get("note") or ""
+        if note and str(note).strip():
+            formatted_text += f"{note}\n"
 
-    formatted_text += f"Total time spent studying today: {input['total_time']}"
+    formatted_text += f"-# Total time spent studying today: {input['total_time']}"
 
     if CLIPBOARD == "wl-clipboard":
         subprocess.Popen(["wl-copy", formatted_text], stdout=subprocess.PIPE)
@@ -52,6 +56,18 @@ def copy_to_clipboard(input: dict):
     else:
         proc = subprocess.Popen(["xsel", "-b"], stdin=subprocess.PIPE)
         proc.communicate(input=bytes(formatted_text, "utf-8"))
+
+
+def copy_text_to_clipboard(text: str):
+    """Copies a plain text string to the first found clipboard."""
+    if CLIPBOARD == "wl-clipboard":
+        subprocess.Popen(["wl-copy", text], stdout=subprocess.PIPE)
+    elif CLIPBOARD == "xclip":
+        proc = subprocess.Popen(["xclip", "-sel", "clip"], stdin=subprocess.PIPE)
+        proc.communicate(input=bytes(text, "utf-8"))
+    else:
+        proc = subprocess.Popen(["xsel", "-b"], stdin=subprocess.PIPE)
+        proc.communicate(input=bytes(text, "utf-8"))
 
 # THIS IS FOR THE CODING SESSIONS
 def copy_to_clipboard_coding_sessions(input: dict):

@@ -20,7 +20,7 @@ for day in study_data:
         total_study_session_length += time_str_to_timedelta(session["session_length"])
 
 # Print total session length
-print("Total hours spent studying physics:", total_study_session_length)
+print("Total hours spent studying:", total_study_session_length)
 
 # Get total length of sessions per day
 def get_total_session_length(row):

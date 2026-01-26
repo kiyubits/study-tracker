@@ -110,7 +110,6 @@ class StudySession:
     (˚ˎ 。7     Study session in progress... 
      |、˜〵     Elapsed time: {session_duration_str}
      じしˍ,)ノ  Total time studied today: {total_time_today_str} 
-
      {sys.argv[1]}
                             """
                     )
@@ -135,55 +134,76 @@ def processEnd(session: StudySession):
     session_length = session.calculate_session_length(session.start_time, end_time)
     session_length_str = strfdelta(session_length)
 
+    # Build the session entry with a placeholder for an optional note
     if session.multiple_sessions:
         session_data = {
             "start_time": session.start_time_str,
             "end_time": end_time_str,
             "session_length": session_length_str,
+            "note": "",
         }
         session.data[len(session.data) - 1]["sessions"].append(session_data)
     else:
-       session_data = {
+        session_data = {
             "day": session.day_number,
             "date": session.start_time.strftime("%Y-%m-%d"),
             "sessions": [
-                { 
+                {
                     "start_time": session.start_time_str,
                     "end_time": end_time_str,
                     "session_length": session_length_str,
+                    "note": "",
                 }
-            ]
-        }   
-        
-       session.data.append(session_data)
-
-    with open(session.filename, "w") as file:
-        json.dump(session.data, file, indent = 4)
-
-    sessions = session.data[len(session.data) - 1]["sessions"]
-
-    if TERM_OPEN:
-        print(f"Studying Everyday Until I Graduate University | Day {session.day_number}\n")
-       
-        total_session_length = datetime.timedelta()
-
-        for i, s in enumerate(sessions, start = 1):
-            print(f"Session {i}: {s['start_time']} - {s['end_time']} ({s['session_length']})")
-            total_session_length += time_str_to_timedelta(s['session_length'])
-
-        print(f"Total time spent studying today: {total_session_length}\n")
-            
-        print(affirmations[random.randint(0, len(affirmations) - 1)])
-
-        # get most recent day for clipboard
-
-        clipboard_data = {
-            "day": session.day_number,
-            "sessions": sessions,
-            "total_time": total_session_length,
+            ],
         }
 
+        session.data.append(session_data)
+
+    # Compute total time for today (including previous sessions)
+    sessions = session.data[len(session.data) - 1]["sessions"]
+    total_session_length = datetime.timedelta()
+    for s in sessions:
+        total_session_length += time_str_to_timedelta(s["session_length"])
+
+    # Prepare clipboard summary data
+    clipboard_data = {
+        "day": session.day_number,
+        "sessions": sessions,
+        "total_time": total_session_length,
+    }
+
+    # If terminal is not open (e.g., SIGHUP), save and copy summary and exit
+    if not TERM_OPEN:
+        with open(session.filename, "w") as file:
+            json.dump(session.data, file, indent=4)
         copy_to_clipboard(clipboard_data)
+        return
+
+    # Terminal is open: prompt for an optional note before printing summary
+    note = input("Add a short note about this session (press Enter to skip): ")
+
+    # Save the note into the most recent session entry
+    sessions[-1]["note"] = note
+
+    # Persist data including the new note
+    with open(session.filename, "w") as file:
+        json.dump(session.data, file, indent=4)
+
+    # Now print the summary (including per-session notes if present)
+    print(f"\nDay {session.day_number}\n")
+
+    for s in sessions:
+        print(f"{s['start_time']} - {s['end_time']} ({s['session_length']})")
+        note_text = s.get("note") or ""
+        if note_text and str(note_text).strip():
+            print(f"  ~ {note_text}\n")
+
+    print(f"Total time spent studying today: {total_session_length}\n")
+
+    print(affirmations[random.randint(0, len(affirmations) - 1)])
+
+    # Always copy the full-day summary (with per-session notes) to the clipboard
+    copy_to_clipboard(clipboard_data)
 
 def main():
 
