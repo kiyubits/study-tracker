@@ -10,5 +10,17 @@
                 "note": "worked on manim stuff for a simulation video im working on"
             }
         ]
+    },
+    {
+        "day": 2,
+        "date": "2026-01-28",
+        "sessions": [
+            {
+                "start_time": "08:33:21 PM",
+                "end_time": "09:55:37 PM",
+                "session_length": "01:22:16",
+                "note": "worked on figuring out a roadmap of topics to help me gain more technical knowledge and skills that will help me down the road, then revised some basic calculus stuff as a part of a numerical analysis textbook i wanna self study"
+            }
+        ]
     }
 ]
