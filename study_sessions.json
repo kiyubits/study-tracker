@@ -22,5 +22,17 @@
                 "note": "worked on figuring out a roadmap of topics to help me gain more technical knowledge and skills that will help me down the road, then revised some basic calculus stuff as a part of a numerical analysis textbook i wanna self study"
             }
         ]
+    },
+    {
+        "day": 3,
+        "date": "2026-01-29",
+        "sessions": [
+            {
+                "start_time": "09:43:05 AM",
+                "end_time": "11:29:37 AM",
+                "session_length": "01:46:31",
+                "note": "finished bad apple thing then made notes on error analysis stuff"
+            }
+        ]
     }
 ]
