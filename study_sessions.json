@@ -40,5 +40,17 @@
                 "note": "wrote notes on a machine learning literature review and i think im gonna try study it as well :3 i wanna eventually try some kind of computer vision project but i wanna learn the fundamentals and stuff so im not just waffling through it"
             }
         ]
+    },
+    {
+        "day": 4,
+        "date": "2026-01-30",
+        "sessions": [
+            {
+                "start_time": "02:20:34 PM",
+                "end_time": "03:57:21 PM",
+                "session_length": "01:36:47",
+                "note": "more numerical analysis, stuff on approximation methods like bisection, fixed point iteration and newton method (revision tbh)"
+            }
+        ]
     }
 ]
