@@ -52,5 +52,17 @@
                 "note": "more numerical analysis, stuff on approximation methods like bisection, fixed point iteration and newton method (revision tbh)"
             }
         ]
+    },
+    {
+        "day": 5,
+        "date": "2026-01-31",
+        "sessions": [
+            {
+                "start_time": "09:27:03 PM",
+                "end_time": "09:56:13 PM",
+                "session_length": "00:29:10",
+                "note": "short session, went over newton's method as a part of the numerical analysis stuff"
+            }
+        ]
     }
 ]
