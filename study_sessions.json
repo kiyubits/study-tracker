@@ -64,5 +64,17 @@
                 "note": "short session, went over newton's method as a part of the numerical analysis stuff"
             }
         ]
+    },
+    {
+        "day": 6,
+        "date": "2026-02-02",
+        "sessions": [
+            {
+                "start_time": "02:20:00 PM",
+                "end_time": "04:32:06 PM",
+                "session_length": "02:12:05",
+                "note": "finished off numerical analysis chapter - stuff on convergence and approximating polynomial roots"
+            }
+        ]
     }
 ]
