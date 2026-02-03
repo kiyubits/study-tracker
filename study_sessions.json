@@ -76,5 +76,29 @@
                 "note": "finished off numerical analysis chapter - stuff on convergence and approximating polynomial roots"
             }
         ]
+    },
+    {
+        "day": 7,
+        "date": "2026-02-03",
+        "sessions": [
+            {
+                "start_time": "01:35:47 PM",
+                "end_time": "04:27:20 PM",
+                "session_length": "02:51:32",
+                "note": "grinded through machine learning textbook, fundamental keywords and stuff like supervised/unsupervised, bias-variance trade-off, regression/classification, k-nearest-neighbours, mean squared error, and uhh yeah"
+            },
+            {
+                "start_time": "06:12:46 PM",
+                "end_time": "06:41:34 PM",
+                "session_length": "00:28:48",
+                "note": "accidentally forgot to start timer until like 30 minutes in, but worked on machine learning exercises, basically just revising python atm"
+            },
+            {
+                "start_time": "07:52:01 PM",
+                "end_time": "08:57:54 PM",
+                "session_length": "01:05:53",
+                "note": "finished machine learning chapter then tried to research potential physics + ml project ideas and i went down a rabbit hole of physics-informed neural networks and im highkey super interested in it lmao"
+            }
+        ]
     }
 ]
