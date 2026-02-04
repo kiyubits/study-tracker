@@ -100,5 +100,17 @@
                 "note": "finished machine learning chapter then tried to research potential physics + ml project ideas and i went down a rabbit hole of physics-informed neural networks and im highkey super interested in it lmao"
             }
         ]
+    },
+    {
+        "day": 8,
+        "date": "2026-02-04",
+        "sessions": [
+            {
+                "start_time": "01:06:55 PM",
+                "end_time": "03:17:01 PM",
+                "session_length": "02:10:06",
+                "note": "worked on study tracker data analysis stuff"
+            }
+        ]
     }
 ]
