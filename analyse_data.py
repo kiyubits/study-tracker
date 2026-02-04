@@ -5,7 +5,6 @@ import pandas as pd
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
-import mplcyberpunk
 
 # Load JSON data
 with open('study_sessions.json', 'r') as file:
@@ -34,15 +33,11 @@ df['cumulative_session_length'] = df['total_session_length'].cumsum()
 
 print(df[['day', 'total_session_length']])
 
-plt.style.use("cyberpunk")
 plt.rcParams["font.family"] = "serif"
 fig, axes = plt.subplots(nrows = 2, ncols=1)
 
 df.plot(ax=axes[0], legend=False, x='day', y='total_session_length', title='session hours per day', ylabel='hours')
 df.plot(ax=axes[1], legend=False, x='day', y='cumulative_session_length', title='cumulative session hours', ylabel='hours')
-
-mplcyberpunk.add_glow_effects(ax=axes[0])
-mplcyberpunk.add_glow_effects(ax=axes[1])
 
 plt.show()
 
