@@ -124,5 +124,17 @@
                 "note": "worked on more study tracker data analysis stuff"
             }
         ]
+    },
+    {
+        "day": 10,
+        "date": "2026-02-07",
+        "sessions": [
+            {
+                "start_time": "09:31:35 PM",
+                "end_time": "10:36:36 PM",
+                "session_length": "01:05:01",
+                "note": "some machine learning (linear regression) and revising some of my old physics notes (kinda tired today so wanted to take a chill session)"
+            }
+        ]
     }
 ]
