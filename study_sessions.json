@@ -136,5 +136,17 @@
                 "note": "some machine learning (linear regression) and revising some of my old physics notes (kinda tired today so wanted to take a chill session)"
             }
         ]
+    },
+    {
+        "day": 11,
+        "date": "2026-02-08",
+        "sessions": [
+            {
+                "start_time": "01:34:05 PM",
+                "end_time": "02:52:28 PM",
+                "session_length": "01:18:23",
+                "note": "machine learning, linear regression stuff"
+            }
+        ]
     }
 ]
