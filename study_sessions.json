@@ -148,5 +148,17 @@
                 "note": "machine learning, linear regression stuff"
             }
         ]
+    },
+    {
+        "day": 12,
+        "date": "2026-02-09",
+        "sessions": [
+            {
+                "start_time": "08:48:22 PM",
+                "end_time": "09:22:30 PM",
+                "session_length": "00:34:07",
+                "note": "more linear regression stuff"
+            }
+        ]
     }
 ]
