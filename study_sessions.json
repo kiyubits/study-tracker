@@ -160,5 +160,17 @@
                 "note": "more linear regression stuff"
             }
         ]
+    },
+    {
+        "day": 13,
+        "date": "2026-02-10",
+        "sessions": [
+            {
+                "start_time": "09:44:38 PM",
+                "end_time": "10:09:57 PM",
+                "session_length": "00:25:19",
+                "note": "more linear regression, this chapter is kinda long"
+            }
+        ]
     }
 ]
