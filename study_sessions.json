@@ -172,5 +172,23 @@
                 "note": "more linear regression, this chapter is kinda long"
             }
         ]
+    },
+    {
+        "day": 14,
+        "date": "2026-02-11",
+        "sessions": [
+            {
+                "start_time": "01:38:52 PM",
+                "end_time": "03:58:14 PM",
+                "session_length": "02:19:22",
+                "note": "worked on resume portfolio stuff (boring)"
+            },
+            {
+                "start_time": "08:32:20 PM",
+                "end_time": "09:28:55 PM",
+                "session_length": "00:56:34",
+                "note": "machine learning, more linear regression stuff, this chapter is quite long"
+            }
+        ]
     }
 ]
