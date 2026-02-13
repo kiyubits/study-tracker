@@ -190,5 +190,17 @@
                 "note": "machine learning, more linear regression stuff, this chapter is quite long"
             }
         ]
+    },
+    {
+        "day": 15,
+        "date": "2026-02-13",
+        "sessions": [
+            {
+                "start_time": "09:53:31 PM",
+                "end_time": "10:26:29 PM",
+                "session_length": "00:32:57",
+                "note": "finally finished content of linear regression chapter, gonna work on lab next time"
+            }
+        ]
     }
 ]
