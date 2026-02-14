@@ -202,5 +202,17 @@
                 "note": "finally finished content of linear regression chapter, gonna work on lab next time"
             }
         ]
+    },
+    {
+        "day": 16,
+        "date": "2026-02-14",
+        "sessions": [
+            {
+                "start_time": "09:51:29 AM",
+                "end_time": "11:26:39 AM",
+                "session_length": "01:35:09",
+                "note": "worked on portfolio resume stuff again, trying to grind it out so i feel good applying for a bunch of internships this year"
+            }
+        ]
     }
 ]
