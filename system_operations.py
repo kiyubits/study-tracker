@@ -46,7 +46,7 @@ def copy_to_clipboard(input: dict):
         if note and str(note).strip():
             formatted_text += f"{note}\n"
 
-    formatted_text += f"-# Total time spent studying today: {input['total_time']}"
+    formatted_text += f"\n-# Total time spent studying today: {input['total_time']}"
 
     if CLIPBOARD == "wl-clipboard":
         subprocess.Popen(["wl-copy", formatted_text], stdout=subprocess.PIPE)
