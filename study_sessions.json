@@ -214,5 +214,17 @@
                 "note": "worked on portfolio resume stuff again, trying to grind it out so i feel good applying for a bunch of internships this year"
             }
         ]
+    },
+    {
+        "day": 17,
+        "date": "2026-02-15",
+        "sessions": [
+            {
+                "start_time": "06:11:35 PM",
+                "end_time": "07:45:54 PM",
+                "session_length": "01:34:18",
+                "note": "worked on resume portfolio stuff again"
+            }
+        ]
     }
 ]
