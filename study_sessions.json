@@ -226,5 +226,17 @@
                 "note": "worked on resume portfolio stuff again"
             }
         ]
+    },
+    {
+        "day": 18,
+        "date": "2026-02-16",
+        "sessions": [
+            {
+                "start_time": "01:32:38 PM",
+                "end_time": "03:34:29 PM",
+                "session_length": "02:01:51",
+                "note": "so i got a spare laptop recently and put arch on it and i wanted to use it for uni stuff so this session i riced and set it up lol"
+            }
+        ]
     }
 ]
