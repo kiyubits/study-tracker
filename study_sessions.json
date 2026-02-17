@@ -238,5 +238,17 @@
                 "note": "so i got a spare laptop recently and put arch on it and i wanted to use it for uni stuff so this session i riced and set it up lol"
             }
         ]
+    },
+    {
+        "day": 19,
+        "date": "2026-02-17",
+        "sessions": [
+            {
+                "start_time": "05:23:59 PM",
+                "end_time": "07:19:02 PM",
+                "session_length": "01:55:03",
+                "note": "worked on uni stuff, computer network stuff"
+            }
+        ]
     }
 ]
