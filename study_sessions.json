@@ -248,6 +248,12 @@
                 "end_time": "07:19:02 PM",
                 "session_length": "01:55:03",
                 "note": "worked on uni stuff, computer network stuff"
+            },
+            {
+                "start_time": "10:50:10 PM",
+                "end_time": "11:51:08 PM",
+                "session_length": "01:00:58",
+                "note": "wanted to work on machine learning more, but since i wanted to do it on the linux laptop i ended up setting it up with my git stuff and other set up stuff lmao, anything but actually doing the work"
             }
         ]
     }
