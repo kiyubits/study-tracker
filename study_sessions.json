@@ -256,5 +256,23 @@
                 "note": "wanted to work on machine learning more, but since i wanted to do it on the linux laptop i ended up setting it up with my git stuff and other set up stuff lmao, anything but actually doing the work"
             }
         ]
+    },
+    {
+        "day": 20,
+        "date": "2026-02-18",
+        "sessions": [
+            {
+                "start_time": "02:00:00 PM",
+                "end_time": "04:23:32 PM",
+                "session_length": "02:23:32",
+                "note": "accidentally turned off my laptop before stopping the time tracking oops. i didn't track the time but i wasted a lot of time trying to get my uni wifi to work on linux but i gave up and im using my hotspot lol. then i wrote notes for this compulsory ethics course im doing so much reading"
+            },
+            {
+                "start_time": "04:29:37 PM",
+                "end_time": "04:59:29 PM",
+                "session_length": "00:29:52",
+                "note": "worked a bit on machine learning exercise, just using statistical packages (slight revision for me but i did forget a lot of stuff)"
+            }
+        ]
     }
 ]
