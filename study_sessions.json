@@ -274,5 +274,17 @@
                 "note": "worked a bit on machine learning exercise, just using statistical packages (slight revision for me but i did forget a lot of stuffs)"
             }
         ]
+    },
+    {
+        "day": 21,
+        "date": "2026-02-20",
+        "sessions": [
+            {
+                "start_time": "02:11:10 PM",
+                "end_time": "02:43:25 PM",
+                "session_length": "00:32:14",
+                "note": "worked on networks lab a bit, got a few classes today so a lil bit busy"
+            }
+        ]
     }
 ]
