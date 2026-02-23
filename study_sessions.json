@@ -286,5 +286,29 @@
                 "note": "worked on networks lab a bit, got a few classes today so a lil bit busy"
             }
         ]
+    },
+    {
+        "day": 22,
+        "date": "2026-02-23",
+        "sessions": [
+            {
+                "start_time": "01:58:40 PM",
+                "end_time": "03:24:59 PM",
+                "session_length": "01:26:19",
+                "note": "worked on networks lab"
+            },
+            {
+                "start_time": "06:27:20 PM",
+                "end_time": "07:27:52 PM",
+                "session_length": "01:00:31",
+                "note": "worked on network notes"
+            },
+            {
+                "start_time": "08:47:57 PM",
+                "end_time": "09:43:36 PM",
+                "session_length": "00:55:39",
+                "note": "finished off this weeks networks notes"
+            }
+        ]
     }
 ]
