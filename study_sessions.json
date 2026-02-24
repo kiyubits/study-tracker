@@ -310,5 +310,29 @@
                 "note": "finished off this weeks networks notes"
             }
         ]
+    },
+    {
+        "day": 23,
+        "date": "2026-02-24",
+        "sessions": [
+            {
+                "start_time": "05:09:02 PM",
+                "end_time": "05:55:51 PM",
+                "session_length": "00:46:48",
+                "note": "got a big group project this term, just reading through the spec and understanding wtf is going on lol"
+            },
+            {
+                "start_time": "06:20:39 PM",
+                "end_time": "06:49:48 PM",
+                "session_length": "00:29:09",
+                "note": "speedrunning ML concepts now because its very relevant to the group project, made notes on logistic regression from random wikis but i think i understand it"
+            },
+            {
+                "start_time": "09:58:20 PM",
+                "end_time": "10:43:43 PM",
+                "session_length": "00:45:23",
+                "note": "read thru project spec in more detail and have a decent understanding of logistic regression now. other than uni work, i guess im gonna be speedrunning machine learning and trying my best to apply concepts and understand stuff properly lol. my goal is to get an internship this year (surely), and ML projects seem like a pretty good path"
+            }
+        ]
     }
 ]
