@@ -334,5 +334,17 @@
                 "note": "read thru project spec in more detail and have a decent understanding of logistic regression now. other than uni work, i guess im gonna be speedrunning machine learning and trying my best to apply concepts and understand stuff properly lol. my goal is to get an internship this year (surely), and ML projects seem like a pretty good path"
             }
         ]
+    },
+    {
+        "day": 24,
+        "date": "2026-02-25",
+        "sessions": [
+            {
+                "start_time": "06:18:00 PM",
+                "end_time": "07:34:54 PM",
+                "session_length": "01:16:54",
+                "note": "wrote notes on decision trees and random forests, the group project also requires apache spark and stuff so i also wanna familiarise myself with it, lots to learn tbh"
+            }
+        ]
     }
 ]
