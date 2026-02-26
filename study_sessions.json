@@ -374,6 +374,12 @@
                 "end_time": "07:01:56 PM",
                 "session_length": "00:54:08",
                 "note": "read thru current codebase (part of the project is rewriting old code into a new infrastructure) and just tryna understand how it works"
+            },
+            {
+                "start_time": "09:12:07 PM",
+                "end_time": "10:01:22 PM",
+                "session_length": "00:49:14",
+                "note": "did a little python pandas practice with study tracker, i just wrote a lil thing to output a printed overview of the stuff i did over the week. took it slow cuz i wanted to make sure i could write it basically from scratch. kinda useful practice for database logic which ill need to do a lot of in the project"
             }
         ]
     }
