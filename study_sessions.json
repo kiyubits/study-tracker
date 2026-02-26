@@ -352,5 +352,29 @@
                 "note": "started watching a youtube course on apache spark, starting to make a lot of sense now :3"
             }
         ]
+    },
+    {
+        "day": 25,
+        "date": "2026-02-26",
+        "sessions": [
+            {
+                "start_time": "02:31:17 PM",
+                "end_time": "04:06:28 PM",
+                "session_length": "01:35:11",
+                "note": "worked on networks lab, slightly sidetracked with vim and config stuff tho lol"
+            },
+            {
+                "start_time": "04:12:37 PM",
+                "end_time": "04:55:49 PM",
+                "session_length": "00:43:11",
+                "note": "chilled session, listened to ethics lecture casually, it talked about interesting ethical conundrums"
+            },
+            {
+                "start_time": "06:07:48 PM",
+                "end_time": "07:01:56 PM",
+                "session_length": "00:54:08",
+                "note": "read thru current codebase (part of the project is rewriting old code into a new infrastructure) and just tryna understand how it works"
+            }
+        ]
     }
 ]
