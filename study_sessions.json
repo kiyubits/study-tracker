@@ -382,5 +382,17 @@
                 "note": "did a little python pandas practice with study tracker, i just wrote a lil thing to output a printed overview of the stuff i did over the week. took it slow cuz i wanted to make sure i could write it basically from scratch. kinda useful practice for database logic which ill need to do a lot of in the project"
             }
         ]
+    },
+    {
+        "day": 26,
+        "date": "2026-02-27",
+        "sessions": [
+            {
+                "start_time": "10:31:07 PM",
+                "end_time": "11:37:44 PM",
+                "session_length": "01:06:37",
+                "note": "short session (yes im buffing all the session hours now cuz im locked in, so 1 hour is short), wanted to actually work with code and get used to working with pyspark for machine learning and database stuff, so i just went through a guide on a simple logistic regression model, gonna try to be rigorous (next time i continue) with statistics and performance metrics on the model cuz those are important for the project and in general lol"
+            }
+        ]
     }
 ]
