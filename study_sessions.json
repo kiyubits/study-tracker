@@ -394,5 +394,23 @@
                 "note": "short session (yes im buffing all the session hours now cuz im locked in, so 1 hour is short), wanted to actually work with code and get used to working with pyspark for machine learning and database stuff, so i just went through a guide on a simple logistic regression model, gonna try to be rigorous (next time i continue) with statistics and performance metrics on the model cuz those are important for the project and in general lol"
             }
         ]
+    },
+    {
+        "day": 27,
+        "date": "2026-03-03",
+        "sessions": [
+            {
+                "start_time": "04:19:06 PM",
+                "end_time": "06:21:51 PM",
+                "session_length": "02:02:45",
+                "note": "worked on project lab about docker and stuff, never used docker before so im taking some time to try figure it out, also truncating this session cuz i think i need to restart my laptop as docker service is buggin"
+            },
+            {
+                "start_time": "06:27:28 PM",
+                "end_time": "07:11:41 PM",
+                "session_length": "00:44:13",
+                "note": "docker stuff part 2, finally got stuff working, its basically like a frontend + backend + sql database thingy ran within docker, def a hassle to figure out but i guess i understand it more now lol"
+            }
+        ]
     }
 ]
