@@ -412,5 +412,17 @@
                 "note": "docker stuff part 2, finally got stuff working, its basically like a frontend + backend + sql database thingy ran within docker, def a hassle to figure out but i guess i understand it more now lol"
             }
         ]
+    },
+    {
+        "day": 28,
+        "date": "2026-03-04",
+        "sessions": [
+            {
+                "start_time": "09:45:46 PM",
+                "end_time": "12:05:20 AM",
+                "session_length": "02:19:33",
+                "note": "finished docker exercise, it had some revision stuff on backends which i totally forgot, and had this really stupid git thing where they literally said after i commited everything to main cuz i thought it was a small inconsequential lab that i had to commit it to a separate branch which caused stupid head and commit history issues cuz i also had to pull from a branch which had different histories which also made it annoying to make a pr cuz hat also had different histories to this new branch cuz i had to squash commits and its so whatevs dude, least i can move on from it lol"
+            }
+        ]
     }
 ]
