@@ -424,5 +424,17 @@
                 "note": "finished docker exercise, it had some revision stuff on backends which i totally forgot, and had this really stupid git thing where they literally said after i commited everything to main cuz i thought it was a small inconsequential lab that i had to commit it to a separate branch which caused stupid head and commit history issues cuz i also had to pull from a branch which had different histories which also made it annoying to make a pr cuz hat also had different histories to this new branch cuz i had to squash commits and its so whatevs dude, least i can move on from it lol"
             }
         ]
+    },
+    {
+        "day": 29,
+        "date": "2026-03-05",
+        "sessions": [
+            {
+                "start_time": "05:02:18 PM",
+                "end_time": "05:23:57 PM",
+                "session_length": "00:21:39",
+                "note": "chill starting sesh, i need to write a sort of literature review for the project thingy and ill try lock in like tonight and full focus it"
+            }
+        ]
     }
 ]
