@@ -436,5 +436,17 @@
                 "note": "chill starting sesh, i need to write a sort of literature review for the project thingy and ill try lock in like tonight and full focus it"
             }
         ]
+    },
+    {
+        "day": 30,
+        "date": "2026-03-06",
+        "sessions": [
+            {
+                "start_time": "02:10:01 PM",
+                "end_time": "02:39:59 PM",
+                "session_length": "00:29:57",
+                "note": "had a few classes today and not a lot of sleep so short session, gonna grind tmmr. worked on networks lab about wireshark and socket programming stuff"
+            }
+        ]
     }
 ]
