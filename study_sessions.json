@@ -409,7 +409,7 @@
                 "start_time": "06:27:28 PM",
                 "end_time": "07:11:41 PM",
                 "session_length": "00:44:13",
-                "note": "docker stuff part 2, finally got stuff working, its basically like a frontend + backend + sql database thingy ran within docker, def a hassle to figure out but i guess i understand it more now lol"
+                "note": "docker stuff part 2, finally got stuff working, its basically like a frontend + backend + sql database thingy ran within docker, def a hassle to figure out but i guess i understand it more now lol. also ive been using neovim this whole time and actually getting used to using it as an IDE (using stuffs like telescope, tabufline and actual keybinds, granted via nvchad cuz im still not too sure if i can main it for everything so not investing too much time configuring stuff). getting better at it at least lol"
             }
         ]
     },
@@ -439,14 +439,14 @@
     },
     {
         "day": 30,
-        "date": "2026-03-07",
+        "date": "2026-03-06",
         "sessions": [
             {
-                "start_time": "03:20:19 PM",
-                "end_time": "03:41:30 PM",
-                "session_length": "00:21:11",
-                "note": "helped out with project proposal document stuffs, taking short break to deal with smth quick, gonna grind networks lab and stuff. also i slept over 12 hours today lol"
+                "start_time": "02:10:01 PM",
+                "end_time": "02:39:59 PM",
+                "session_length": "00:29:57",
+                "note": "had a few classes today and not a lot of sleep so short session, gonna grind tmmr. worked on networks lab about wireshark and socket programming stuff"
             }
         ]
-    }
+    },
 ]
