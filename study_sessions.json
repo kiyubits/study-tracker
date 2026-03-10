@@ -448,5 +448,29 @@
                 "note": "had a few classes today and not a lot of sleep so short session, gonna grind tmmr. worked on networks lab about wireshark and socket programming stuff"
             }
         ]
+    },
+    {
+        "day": 31,
+        "date": "2026-03-10",
+        "sessions": [
+            {
+                "start_time": "06:20:02 PM",
+                "end_time": "07:11:29 PM",
+                "session_length": "00:51:26",
+                "note": "worked on networks notes"
+            },
+            {
+                "start_time": "08:46:34 PM",
+                "end_time": "09:30:56 PM",
+                "session_length": "00:44:22",
+                "note": "worked on more networks notes, taking a break cuz the course suggests i figure out how to use wireshark to check my own network which i feel like is a useful thing to know so im restarting cuz i needed to add wireshark perms to my laptop lol"
+            },
+            {
+                "start_time": "09:32:27 PM",
+                "end_time": "10:08:21 PM",
+                "session_length": "00:35:54",
+                "note": "finished networks notes, and got wireshark working and saw the dns packets of websites i was on, kinda cool lol"
+            }
+        ]
     }
 ]
