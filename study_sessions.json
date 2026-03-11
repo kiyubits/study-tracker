@@ -493,6 +493,12 @@
                 "end_time": "02:49:17 PM",
                 "session_length": "01:26:54",
                 "note": "getting a job grind omg, i updated my portfolio and im beginning to write a resume for myself. im planning to basically get it done so that i can basically spam applications for the rest of the year to companies and see if i get any luck. gonna try attend career fairs and stuff, basically locking in on that stuff. i dont have that much work experience so it might be tough, but i think i have a few decent projects. lmk if u guys got any advice"
+            },
+            {
+                "start_time": "08:55:03 PM",
+                "end_time": "10:09:52 PM",
+                "session_length": "01:14:48",
+                "note": "we recently got access to the databricks for the project, so i imported existing codebase stuff that they provided onto there and basically figured my way around databricks, connecting to our group git repo and stuff like that, prolly gonna grind tmmr getting stuff done. idk how to even run the old codebase yet lols"
             }
         ]
     }
