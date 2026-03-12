@@ -501,5 +501,17 @@
                 "note": "we recently got access to the databricks for the project, so i imported existing codebase stuff that they provided onto there and basically figured my way around databricks, connecting to our group git repo and stuff like that, prolly gonna grind tmmr getting stuff done. idk how to even run the old codebase yet lols"
             }
         ]
+    },
+    {
+        "day": 34,
+        "date": "2026-03-12",
+        "sessions": [
+            {
+                "start_time": "03:03:44 PM",
+                "end_time": "04:31:01 PM",
+                "session_length": "01:27:16",
+                "note": "worked on group project some more, actually diving deep into the code and understanding how it works. i wanted to run it actually, but i found out that it requires an external database which we dont have access to so gg"
+            }
+        ]
     }
 ]
