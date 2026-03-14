@@ -525,5 +525,23 @@
                 "note": "worked on networks lab"
             }
         ]
+    },
+    {
+        "day": 36,
+        "date": "2026-03-14",
+        "sessions": [
+            {
+                "start_time": "06:38:51 PM",
+                "end_time": "07:46:47 PM",
+                "session_length": "01:07:55",
+                "note": "worked on group project some more, working on importing sql queries and figuring out where the data it refers to is (have to update the names and stuff and make sure the data is present, headache lol)"
+            },
+            {
+                "start_time": "10:07:56 PM",
+                "end_time": "11:32:22 PM",
+                "session_length": "01:24:26",
+                "note": "worked on project some more, finally got at least a database query working but i gotta do more work on applying their scoring ruleset, lots lots to figure out stills"
+            }
+        ]
     }
 ]
