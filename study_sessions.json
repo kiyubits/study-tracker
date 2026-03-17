@@ -567,5 +567,23 @@
                 "note": "worked on group project database stuff, actually getting queries to work a bit but still figuring stuff out about the data (not gonna talk too much about it but ya)"
             }
         ]
+    },
+    {
+        "day": 38,
+        "date": "2026-03-17",
+        "sessions": [
+            {
+                "start_time": "02:34:29 PM",
+                "end_time": "04:47:56 PM",
+                "session_length": "02:13:26",
+                "note": "worked on group project stuff, finally got an elementary simplified version of the old codebase working, gonna work on it more later cuz i did it in a pretty messy and unorganised way just to get it working lol"
+            },
+            {
+                "start_time": "08:26:40 PM",
+                "end_time": "09:30:03 PM",
+                "session_length": "01:03:23",
+                "note": "refactored the stuff for the project and made a pr, gonna chill rest of night ig"
+            }
+        ]
     }
 ]
