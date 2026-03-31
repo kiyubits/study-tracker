@@ -651,5 +651,35 @@
                 "note": "totally forgot about a midterm exam i have this week so i kinda had to lock in today lols"
             }
         ]
+    },
+    {
+        "day": 44,
+        "date": "2026-03-31",
+        "sessions": [
+            {
+                "start_time": "10:37:55 AM",
+                "end_time": "12:26:12 PM",
+                "session_length": "01:48:17",
+                "note": "worked on leetcode problems, gonna try to keep myself sharp now cuz im applying to internships and job offers and stuff so ya, locking in"
+            },
+            {
+                "start_time": "01:54:19 PM",
+                "end_time": "03:49:23 PM",
+                "session_length": "01:55:04",
+                "note": "worked on ethics group project"
+            },
+            {
+                "start_time": "05:54:03 PM",
+                "end_time": "07:10:43 PM",
+                "session_length": "01:16:39",
+                "note": "worked on ethics stuff more"
+            },
+            {
+                "start_time": "08:56:13 PM",
+                "end_time": "11:58:01 PM",
+                "session_length": "03:01:48",
+                "note": "mix of ethics stuff and group project, bit of refactoring, bit of live coding, yeah"
+            }
+        ]
     }
 ]
