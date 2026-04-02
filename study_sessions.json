@@ -703,6 +703,12 @@
                 "end_time": "5:45:00 PM",
                 "session_length": "02:15:00",
                 "note": "worked on leetcode problems"
+            },
+            {
+                "start_time": "11:34:27 PM",
+                "end_time": "12:43:35 AM",
+                "session_length": "01:09:08",
+                "note": "worked on more leetcode"
             }
         ]
     }
