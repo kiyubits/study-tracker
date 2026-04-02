@@ -118,15 +118,20 @@ class StudySession:
 
         self.progress_thread = threading.Thread(target=display_session_progress)
         self.progress_thread.start()
-
-        input()
-        self.halt = True
-        self.progress_thread.join()
-        processEnd(self)
-
+        
+        try:
+            input()
+        except KeyboardInterrupt:
+            print("\nEnding session...")
+        finally:
+            self.halt = True
+            if self.progress_thread and self.progress_thread.is_alive():
+                self.progress_thread.join()
+            processEnd(self)
+    
 def processEnd(session: StudySession):
     # Ensure that prompting has completed before sessions file
-    if(not INIT): 
+    if not INIT: 
         return
 
     end_time = datetime.datetime.now()
@@ -180,7 +185,11 @@ def processEnd(session: StudySession):
         return
 
     # Terminal is open: prompt for an optional note before printing summary
-    note = input("Add a short note about this session (press Enter to skip): ")
+    try:
+        note = input("Add a short note about this session (press Enter to skip): ")
+    except KeyboardInterrupt:
+        print("\nSkipping note.")
+        note = ""
 
     # Save the note into the most recent session entry
     sessions[-1]["note"] = note
@@ -233,7 +242,7 @@ def main():
         sys.exit(0)
 
     signal.signal(signal.SIGHUP, sig_hup_handler)
-    signal.signal(signal.SIGINT, sig_int_handler)
+    # signal.signal(signal.SIGINT, sig_int_handler)
     session.track_study_session()
 
 if __name__ == "__main__":
