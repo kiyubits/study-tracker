@@ -741,5 +741,17 @@
                 "note": "grinded leetcode, kinda forgot to cover some fundamentals :sob:"
             }
         ]
+    },
+    {
+        "day": 49,
+        "date": "2026-04-05",
+        "sessions": [
+            {
+                "start_time": "10:50:59 PM",
+                "end_time": "01:38:51 AM",
+                "session_length": "02:47:51",
+                "note": "worked on ethics group project report stuff, kinda got lost track of time :skull:"
+            }
+        ]
     }
 ]
