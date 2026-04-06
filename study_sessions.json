@@ -753,5 +753,29 @@
                 "note": "worked on ethics group project report stuff, kinda got lost track of time :skull:"
             }
         ]
+    },
+    {
+        "day": 50,
+        "date": "2026-04-06",
+        "sessions": [
+            {
+                "start_time": "02:44:57 PM",
+                "end_time": "04:44:05 PM",
+                "session_length": "01:59:07",
+                "note": "live code session on group project, solid progress"
+            },
+            {
+                "start_time": "06:10:42 PM",
+                "end_time": "07:28:23 PM",
+                "session_length": "01:17:40",
+                "note": "started networks assignment, stuff with formatting packets and reading their bytes and translating the packets and stuff"
+            },
+            {
+                "start_time": "09:50:40 PM",
+                "end_time": "10:26:11 PM",
+                "session_length": "00:35:31",
+                "note": "worked on networks assignment some more"
+            }
+        ]
     }
 ]
