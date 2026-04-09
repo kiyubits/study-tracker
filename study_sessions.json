@@ -801,5 +801,23 @@
                 "note": "worked on networks assignment"
             }
         ]
+    },
+    {
+        "day": 52,
+        "date": "2026-04-09",
+        "sessions": [
+            {
+                "start_time": "02:26:35 PM",
+                "end_time": "06:26:46 PM",
+                "session_length": "04:00:11",
+                "note": "worked on group project presentation, kinda due tmmr lol. mostly in a vc with a group mate figuring stuff out"
+            },
+            {
+                "start_time": "09:59:38 PM",
+                "end_time": "01:15:52 AM",
+                "session_length": "03:16:13",
+                "note": "worked on group presentation, trying to get somewhat of a code demo working cuz our thing runs in like 2 mins but i need to make a tradeoff with how close it is to the true data vs computation time, taking random samples doesnt reflect the shape of the data well enough with small sample size oof"
+            }
+        ]
     }
 ]
