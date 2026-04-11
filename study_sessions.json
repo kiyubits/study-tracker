@@ -819,5 +819,23 @@
                 "note": "worked on group presentation, trying to get somewhat of a code demo working cuz our thing runs in like 2 mins but i need to make a tradeoff with how close it is to the true data vs computation time, taking random samples doesnt reflect the shape of the data well enough with small sample size oof"
             }
         ]
+    },
+    {
+        "day": 53,
+        "date": "2026-04-11",
+        "sessions": [
+            {
+                "start_time": "05:32:08 PM",
+                "end_time": "07:14:50 PM",
+                "session_length": "01:42:42",
+                "note": "did some uni housekeeping stuff then worked a bit on networks lab (all those presentations kinda burned me out :sob:)"
+            },
+            {
+                "start_time": "08:27:13 PM",
+                "end_time": "09:47:33 PM",
+                "session_length": "01:20:20",
+                "note": "worked on networks lab"
+            }
+        ]
     }
 ]
