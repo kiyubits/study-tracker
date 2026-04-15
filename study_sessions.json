@@ -879,5 +879,17 @@
                 "note": "worked on networks assignment some more"
             }
         ]
+    },
+    {
+        "day": 56,
+        "date": "2026-04-15",
+        "sessions": [
+            {
+                "start_time": "09:21:59 PM",
+                "end_time": "11:13:59 PM",
+                "session_length": "01:51:59",
+                "note": "finished networks assignment, last part was mainly creating icmp packets to be send for error cases lol"
+            }
+        ]
     }
 ]
