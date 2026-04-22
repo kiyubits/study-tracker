@@ -894,6 +894,18 @@
     },
     {
         "day": 57,
+        "date": "2026-04-20",
+        "sessions": [
+            {
+                "start_time": "10:42:45 PM",
+                "end_time": "12:05:28 AM",
+                "session_length": "01:22:43",
+                "note": "networks lab"
+            }
+        ]
+    },
+    {
+        "day": 58,
         "date": "2026-04-22",
         "sessions": [
             {
