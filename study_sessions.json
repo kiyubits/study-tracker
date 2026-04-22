@@ -891,5 +891,17 @@
                 "note": "finished networks assignment, last part was mainly creating icmp packets to be send for error cases lol"
             }
         ]
+    },
+    {
+        "day": 57,
+        "date": "2026-04-22",
+        "sessions": [
+            {
+                "start_time": "06:18:56 PM",
+                "end_time": "07:05:32 PM",
+                "session_length": "00:46:35",
+                "note": "leetcode, worked on some graphs question (revision xd)"
+            }
+        ]
     }
 ]
