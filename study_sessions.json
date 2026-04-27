@@ -918,6 +918,18 @@
     },
     {
         "day": 59,
+        "date": "2026-04-24",
+        "sessions": [
+            {
+                "start_time": "02:08:53 PM",
+                "end_time": "03:15:35 PM",
+                "session_length": "01:06:42",
+                "note": "did some leetcodes questions before class lols"
+            }
+        ]
+    },
+    {
+        "day": 60,
         "date": "2026-04-27",
         "sessions": [
             {
