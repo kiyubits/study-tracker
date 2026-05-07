@@ -939,5 +939,17 @@
                 "note": "tasked with documentation for group project, worked on making the readme look all pretty and created doc pages"
             }
         ]
+    },
+    {
+        "day": 61,
+        "date": "2026-05-07",
+        "sessions": [
+            {
+                "start_time": "04:58:23 PM",
+                "end_time": "06:17:08 PM",
+                "session_length": "01:18:44",
+                "note": "worked on leetcode, did dfs/bfs stuff, pretty rusty on graphs so it good practice"
+            }
+        ]
     }
 ]
